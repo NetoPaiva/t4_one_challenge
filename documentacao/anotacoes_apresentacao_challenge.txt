@@ -1,0 +1,97 @@
+Challenge Alura ONE - Decodificador texto
+
+Anotações da apresentação do challenge
+
+    ( https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript )
+
+
+- desenvolvimento fornt-end
+
+- Layout no FIGMA
+
+- Encriptar texto
+    - codificar mensagem para evitar leitura de quem não saiba descodificar
+    - seguir as regras para criptografas/descriptografar
+
+- Ferramentas e conceitos a serem trabalhados:
+  (Conteúdo de lógica de programação)
+    - trabalhar com texto
+    - forma de criar texto
+    - comportamento do texto com determinadas ações
+    - do dia a dia dos devs
+    - figma para layout da página
+
+
+- Estrutura do Challenge
+
+    - criar página HTML com os elementos:
+
+    - Digite seu texto
+        - campo de entrada de texto
+        - input
+    - Mensagem enviada
+        - Área de texto
+        - mostra o texto enviado / criptografado
+    - Criptografar
+        - botão para enviar texto
+    - Descriptografar
+        - botão para trazer texto
+    - copiar
+        - botão para copiar texto (do porta-papeis)
+    - incremento opcional
+        - botão compartilhar (se quiser)
+
+
+- Figma
+    - referência de layout responsivo
+        - disposição dos elementos
+    - exportar / baixar os elementos (imagens)
+    - guia de cores / fontes
+    - código css
+        - oientação de posicionamento
+    - o desafio é apenas a versão desktop
+    - pode criar o próprio layout
+        - melhora portfolio
+    - estilização
+    - responsividade
+    - css
+
+
+- Trello
+    - organização / metodologia ágil
+    - compratilhar andamento do projeto
+    - agrega informações
+    - explicar tarefas / sprints
+    - colunas / cards de atividades
+    - instruções sobre o desafio
+    - material de apoio
+        - cursos e artigos e vídeos
+    - conteúdos relacionados com os cursos da trilha
+    - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

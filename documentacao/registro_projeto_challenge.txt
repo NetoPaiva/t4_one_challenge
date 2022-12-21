@@ -1,0 +1,86 @@
+Anotações do andamento do projeto
+
+
+1. Criar repositório no GitHub
+
+	- Login na plataforma GitHub
+	- Repositories / New
+	- nomear e escrever descrição
+	- Create repository
+
+
+2. Iniciar, via terminal, o monitoramento de versão e fazer primeiro commit
+
+	- criar pasta para o projeto
+
+	- abrir terminal e entrar na pasta do projeto
+
+	- iniciar o monitoramento do GitHub
+		<git init>
+
+	- configurar usário global
+		<git config --global user.name "seu-usário-no-github">
+
+	- configurar email global
+		<git config --global user.email "seu-email">
+
+	- verificar se está tudo ok
+		<git status>
+
+	- criar aqruivo README.md com as principais informações do projeto
+		(arquivo no formato markdown - .md)
+
+	- adicionar README no monitoramento
+		<git add README.md>
+
+	- cirar primeiro commit de incluão do README
+		<git commit -m"descrição-do-commit">
+
+	- definir o ramo principal como "main"
+		<git branch -M main>
+
+	- adicionar repositório do github
+		<git remote add origin "endereço-do-repositório-no-github">
+
+	-verificar se está tudo ok
+		<git status>
+
+	- enviar versão para github (informando sempre destino e origem)
+		<git push origin main>
+
+	- ou enviar para github (informando apenas a primeira vez)
+		<git push -u origin main
+			(depois, basta usar <git push> para enviar)
+
+
+3. Criar pastas para organizar repositório do prrojeto
+
+	- documentação
+		- arquivos de anotações e orientações
+
+	- projeto
+		- pastas e arquivos com os códigos do projeto
+
+
+4. Inicar a estrutura HTML
+
+	- criar "index.html" com a estrutura básica
+		-----------------------------------------
+			<!DOCTYPE html>
+			<html lang="pt-br">
+				<head>
+					<meta charset="UTF-8"/>
+					<title>NetoPaiva | codificador | t4 one</title>
+				</head>
+				<body>
+					<header></header>
+					<main></main>
+					<footer></footer>
+				</body>
+			</html>
+			<script>
+			</script>
+		-----------------------------------------
+
+	-
+
