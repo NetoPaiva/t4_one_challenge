@@ -1,0 +1,2013 @@
+Propriedades CSS dos elementos da página
+
+    Layout Desktop - Figma
+    [ https://www.figma.com/file/tvFEYhVfZTjdJ5P24RGV21/Alura-Challenge---Desafio-1---L%C3%B3gica?node-id=16%3A802 ]
+
+Referência de uso da plataforma
+    
+    Vídeo
+    Alura+: Como um(a) desenvolvedor(a) front-end utiliza o Figma
+    ( https://cursos.alura.com.br/como-front-end-utiliza-o-figma-c858 )
+
+
+Elementos da página 1
+
+
+1- Área total da página
+
+    - Properties
+        height: 1024px;
+        width: 1440px;
+        left: -2277px;
+        top: 622px;
+        border-radius: 0px;
+
+    - Colors
+        background: #F3F5FC;
+
+    - Code CSS
+    /* Decodificador - 1 Desktop */
+        position: relative;
+        width: 1440px;
+        height: 1024px;
+
+    /* Light blue/light-blue-100 */
+        background: #F3F5FC;
+
+        X: -2277px
+        Y: 622px
+        W: 1440px
+        H: 1024px
+        Fill Color Style: Light blue/light-blue-100
+        Fill: Solid
+        #F3F5FC
+
+
+2- Frame do Logo
+
+    - Properties
+        height: 48px;
+        width: 120px;
+        left: 40px;
+        top: 40px;
+        border-radius: 0px;
+
+        WidthHug (120px)
+        HeightHug (48px)
+        Top 40px
+        Left 40px
+        Gap 40px
+
+    - Code CSS
+    /* Frame 6 */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 40px;
+
+        position: absolute;
+        width: 120px;
+        height: 48px;
+        left: 40px;
+        top: 40px;
+
+        X: 40px
+        Y: 40px
+        W: 120px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+
+
+3- # Logo
+
+    - Properties #logo
+        height: 48px;
+        width: 120px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Code CSS #logo
+    /* Logo */
+        width: 120px;
+        height: 48px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 0px
+        W: 120px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+
+
+4- Vector Logo
+
+    - Properties
+        height: 48px;
+        width: 31.085588455200195px;
+        left: 44px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Colors
+        background: #0A3871;
+            Dark blue/dark-blue-300
+            rgba(10, 56, 113, 1)
+
+    - Code CSS
+        /* Vector */
+            position: absolute;
+            left: 36.67%;
+            right: 37.43%;
+            top: 0%;
+            bottom: 0%;
+
+        /* Dark blue/dark-blue-300 */
+            background: #0A3871;
+
+            X: 44px
+            Y: 0px
+            W: 31.09px
+            H: 48px
+            X constraint: Scale
+            Y constraint: Scale
+            Fill Color Style: Dark blue/dark-blue-300
+            Fill: Solid
+            #0A3871
+
+
+5- Digite texto
+
+    - Properties
+        height: 48px;
+        width: 680px;
+        left: 240px;
+        top: 168px;
+        border-radius: nullpx;
+
+    - Content
+        Digite seu texto
+
+    - Typography
+        font-family: Inter;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    - Colors
+        background: #0A3871;
+
+    - Interactions
+        // On click
+        // Navigate to: "Decodificador - 2 Desktop";
+        // Animate: Instant;
+           animation-duration: 0ms;
+
+    - Code
+    /* Digite seu texto */
+
+        position: absolute;
+        width: 680px;
+        height: 48px;
+        left: 240px;
+        top: 168px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 150%;
+
+    /* identical to box height, or 48px */
+
+    /* Dark blue/dark-blue-300 */
+        color: #0A3871;
+
+        X: 240px
+        Y: 168px
+        W: 680px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 32px
+        Line height: 48px
+        Line height: 150%
+        Align: Left
+        Vertical align: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+6- Frame Alerta - maiúsculas / acentos
+
+    - Properties
+        height: 18px;
+        width: 252px;
+        left: 240px;
+        top: 851px;
+        border-radius: 0px;
+
+        WidthHug (252px)
+        HeightHug (18px)
+        Top 851px
+        Left 240px
+        Gap 8px
+
+    - Code CSS
+    /* Frame 1 */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 8px;
+
+        position: absolute;
+        width: 252px;
+        height: 18px;
+        left: 240px;
+        top: 851px;
+
+        X: 240px
+        Y: 851px
+        W: 252px
+        H: 18px
+        X constraint: Left
+        Y constraint: Top
+
+
+7- Frame ícone exclamação
+ 
+    #bi:exclamation-circle-fill
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 1px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* bi:exclamation-circle-fill */
+        width: 16px;
+        height: 16px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 1px
+        W: 16px
+        H: 16px
+        X constraint: Left
+        Y constraint: Top
+
+8- Group ícone exclamação
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* Group */
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+
+        X: 0px
+        Y: 0px
+        W: 16px
+        H: 16px
+        X constraint: Scale
+        Y constraint: Scale
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+
+9- Vector ícone exclamação
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Colors
+        background: #495057;
+
+    - Code CSS
+    /* Vector */
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+
+    /* Gray/gray-400 */
+        background: #495057;
+
+        X: 0px
+        Y: 0px
+        W: 16px
+        H: 16px
+        X constraint: Scale
+        Y constraint: Scale
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+10- Texto maiúsculas / acento
+
+    - Properties
+        height: 18px;
+        width: 228px;
+        left: 24px;
+        top: 0px;
+        border-radius: nullpx;
+
+    - Content
+        - Apenas letras minúsculas e sem acento.
+
+    - Typography
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    - Colors Hex
+        background: #495057;
+        Gray/gray-400
+        #495057
+
+    - Code CSS
+    /* Apenas letras minúsculas e sem acento. */
+        width: 228px;
+        height: 18px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+
+    /* identical to box height, or 18px */
+
+    /* Gray/gray-400 */
+        color: #495057;
+
+        opacity: 0.8;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        X: 24px
+        Y: 0px
+        W: 228px
+        H: 18px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 12px
+        Line height: 18px
+        Line height: 150%
+        Align: Left
+        Vertical align: Top
+        Opacity: 80%
+        Blend: Pass through
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+11- Botão cripto - button
+
+    - Component properties
+        Color="Dark blue";
+        State="Normal";
+
+    - Properties
+        height: 67px;
+        width: 328px;
+        left: 0px;
+        top: 0px;
+        border-radius: 24px;
+        padding: 24px;
+
+    -Colors Hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 8px;
+
+        width: 328px;
+        height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+        background: #0A3871;
+        border-radius: 24px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 0px
+        W: 328px
+        H: 67px
+        Corner radius: 24px
+        X constraint: Left
+        Y constraint: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+12- Texto cripto - text button
+
+    - Parent component
+        - Button
+
+    - Properties
+        height: 19px;
+        width: 280px;
+        left: 24px;
+        top: 24px;
+        border-radius: nullpx;
+
+    - Content
+        Criptografar
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors Hex
+        background: #FFFFFF;
+
+    - Code CSS
+    /* Button */
+
+        width: 280px;
+        height: 19px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+    /* White */
+        color: #FFFFFF;
+
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+        X: 24px
+        Y: 24px
+        W: 280px
+        H: 19px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 19px
+        Line height: 100%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: White
+        Fill: Solid
+        #FFFFFF
+
+
+13- Botão descript - Button
+
+    - Component properties
+        Color="Light blue";
+        State="Normal";
+
+    - Properties
+        height: 67px;
+        width: 328px;
+        left: 352px;
+        top: 0px;
+        border-radius: 24px;
+        padding: 24px;
+
+    - Colors Hex
+        background: linear-gradient(0deg, #0A3871, #0A3871),
+        linear-gradient(0deg, #D8DFE8, #D8DFE8);
+
+        Dark blue/dark-blue-300
+        #0A3871
+        #D8DFE8
+
+    - Borders Hex
+        border: 1px solid #0A3871
+
+        1px Inner border
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        box-sizing: border-box;
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 8px;
+
+        width: 328px;
+        height: 67px;
+
+    /* Light gray */
+        background: #D8DFE8;
+
+    /* Dark blue/dark-blue-300 */
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        X: 352px
+        Y: 0px
+        W: 328px
+        H: 67px
+        Corner radius: 24px
+        X constraint: Left
+        Y constraint: Top
+        Fill: Solid
+        #D8DFE8
+        Stroke Color Style: Dark blue/dark-blue-300
+        Stroke: Solid
+        #0A3871
+        Align: Inside
+        Width: 1px
+
+14- Texto descripto - text button
+
+    - Parent component
+        Button
+
+    - Properties
+        height: 19px;
+        width: 280px;
+        left: 24px;
+        top: 24px;
+        border-radius: nullpx;
+
+    - Content
+        Descriptografar
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    -   Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        width: 280px;
+        height: 19px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+    /* Dark blue/dark-blue-300 */
+        color: #0A3871;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+        X: 24px
+        Y: 24px
+        W: 280px
+        H: 19px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 19px
+        Line height: 100%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+15- Div Imagem Lupa
+
+    - Properties
+        height: 304px;
+        width: 336px;
+        left: 1032px;
+        top: 283px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* lupa */
+
+        position: absolute;
+        width: 336px;
+        height: 304px;
+        left: 1032px;
+        top: 283px;
+
+        X: 1032px
+        Y: 283px
+        W: 336px
+        H: 304px
+        X constraint: Left
+        Y constraint: Top
+
+16- Imagem Lupa
+
+    - Properties
+        height: 304px;
+        width: 336px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* imagem lupa */
+
+        position: absolute;
+        width: 336px;
+        height: 304px;
+        left: 0px;
+        top: 0px;
+
+        X: 0px
+        Y: 0px
+        W: 336px
+        H: 304px
+        X constraint: Left
+        Y constraint: Top
+
+
+17- Div texto saída
+
+    - Properies
+        height: 122px;
+        width: 336px;
+        left: 1032px;
+        top: 619px;
+        border-radius: 0px;
+
+        WidthHug (336px)
+        HeightHug (122px)
+        Top 619px
+        Left 1032px
+        Gap 16px
+
+    - Code CSS
+    /* texto saída */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 16px;
+
+        position: absolute;
+        width: 336px;
+        height: 122px;
+        left: 1032px;
+        top: 619px;
+
+        X: 1032px
+        Y: 619px
+        W: 336px
+        H: 122px
+        X constraint: Left
+        Y constraint: Top
+
+
+18- Texto "nenhuma mensagem" - text
+
+    - Properties
+        height: 58px;
+        width: 336px;
+        left: 0px;
+        top: 0px;
+        border-radius: nullpx;
+
+        Width Fill (336px)
+        Height Hug (58px)
+
+    - Content
+        Nenhuma mensagem encontrada
+
+    - Typography
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors - hex
+        background: #343A40;
+        Gray/gray-500
+        #343A40
+
+    - Code CSS
+    /* Nenhuma mensagem encontrada */
+
+        width: 336px;
+        height: 58px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+
+    /* or 29px */
+        text-align: center;
+
+    /* Gray/gray-500 */
+        color: #343A40;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 0px
+        W: 336px
+        H: 58px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Bold
+        Font size: 24px
+        Line height: 29px
+        Line height: 120%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: Gray/gray-500
+        Fill: Solid
+        #343A40
+
+
+19- Texto "digite um texto..." - text
+
+    - Properties
+        height: 48px;
+        width: 336px;
+        left: 0px;
+        top: 74px;
+        border-radius: nullpx;
+
+        Width Fill (336px)
+        Height Hug (48px)
+        Top 74px
+
+    - Content
+        Digite um texto que você deseja criptografar ou descriptografar.
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors - hex
+        background: #495057;
+        Gray/gray-400
+        #495057
+
+    - Code CSS
+    /* Digite um texto que você deseja criptografar ou descriptografar. */
+
+        width: 336px;
+        height: 48px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+
+    /* or 24px */
+        text-align: center;
+
+    /* Gray/gray-400 */
+        color: #495057;
+
+
+    /* Inside auto layout */
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 74px
+        W: 336px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 24px
+        Line height: 150%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+
+20- Div área de texto
+
+    - Properties
+        height: 944px;
+        width: 400px;
+        left: 1000px;
+        top: 40px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* área texto */
+
+        position: absolute;
+        width: 400px;
+        height: 944px;
+        left: 1000px;
+        top: 40px;
+
+        X: 1000px
+        Y: 40px
+        W: 400px
+        H: 944px
+        X constraint: Left
+        Y constraint: Top
+
+
+21- Caixa da área de texto
+
+    - Properties
+        height: 944px;
+        width: 400px;
+        left: 0px;
+        top: 0px;
+        border-radius: 32px;
+
+    - Colors - hex
+        background: #FFFFFF;
+
+    - Shadows - hex
+        box-shadow: 0px 24px 32px -8px #00000014;
+
+        shadow
+        X 0
+        Y 24
+        B 32
+        S -8
+        #000000 8%
+
+    - Code CSS
+    /* Rectangle 1 */
+
+        position: absolute;
+        width: 400px;
+        height: 944px;
+        left: 0px;
+        top: 0px;
+
+    /* White */
+        background: #FFFFFF;
+
+    /* shadow */
+        box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+        border-radius: 32px;
+
+        X: 0px
+        Y: 0px
+        W: 400px
+        H: 944px
+        Corner radius: 32px
+        X constraint: Left
+        Y constraint: Top
+        Fill Color Style: White
+        Fill: Solid
+        #FFFFFF
+        Effect style: shadow
+        Effect: Drop shadow
+        Radius: 32px
+        Offset: 0px, 24px
+        rgba(0, 0, 0, 0.08)
+
+
+
+Elementos da página 2
+
+
+1- Área total da página
+
+    - Properties
+        height: 1024px;
+        width: 1440px;
+        left: -720px;
+        top: 622px;
+        border-radius: 0px;
+
+    - Colors - hex
+        background: #F3F5FC;
+        Light blue/light-blue-100
+        #F3F5FC
+
+    - Code CSS
+    /* Decodificador - 2 Desktop */
+
+        position: relative;
+        width: 1440px;
+        height: 1024px;
+
+    /* Light blue/light-blue-100 */
+        background: #F3F5FC;
+
+        X: -720px
+        Y: 622px
+        W: 1440px
+        H: 1024px
+        Fill Color Style: Light blue/light-blue-100
+        Fill: Solid
+        #F3F5FC
+
+
+2- Div Logo
+
+    - Properties
+        height: 48px;
+        width: 120px;
+        left: 40px;
+        top: 40px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* div logo */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 40px;
+
+        position: absolute;
+        width: 120px;
+        height: 48px;
+        left: 40px;
+        top: 40px;
+
+        X: 40px
+        Y: 40px
+        W: 120px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+
+
+3- # Logo
+
+    - Properties
+        height: 48px;
+        width: 120px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* Logo */
+        width: 120px;
+        height: 48px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 0px
+        W: 120px
+        H: 48px
+        X constraint: Left
+        Y constraint: Top
+
+
+4- Vector logo
+
+    - Properties
+        height: 48px;
+        width: 31.085588455200195px;
+        left: 44px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Colors - hex
+        background: linear-gradient(0deg, #0A3871, #0A3871),
+        linear-gradient(0deg, #000000, #000000),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+
+        Dark blue/dark-blue-300
+        #0A3871
+        #000000
+        #000000 20%
+
+    - Borders - hex
+        border: 1px solid;
+
+        border-image-source: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(0deg, #000000, #000000);
+
+        1px Inner border
+        #000000 20%
+        #000000
+
+    - Shadows - hex
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        Drop shadow
+        X0
+        Y4
+        B4
+        S0
+        #000000 25%
+
+        Drop shadow
+        X0
+        Y4
+        B4
+        S0
+        #000000 25%
+
+    - Code CSS
+    /* Vector */
+
+        box-sizing: border-box;
+
+        position: absolute;
+        left: 36.67%;
+        right: 37.43%;
+        top: 0%;
+        bottom: 0%;
+
+    /* Dark blue/dark-blue-300 */
+        background: #0A3871;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        X: 44px
+        Y: 0px
+        W: 31.09px
+        H: 48px
+        X constraint: Scale
+        Y constraint: Scale
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+        Stroke: Solid
+        rgba(0, 0, 0, 0.2)
+        Stroke: Solid
+        #000000
+        Align: Inside
+        Width: 1px
+        Effect: Drop shadow
+        Radius: 4px
+        Offset: 0px, 4px
+        rgba(0, 0, 0, 0.25)
+        Effect: Drop shadow
+        Radius: 4px
+        Offset: 0px, 4px
+        rgba(0, 0, 0, 0.25)
+
+
+5- Div input text
+
+    - Properties
+        height: 288px;
+        width: 680px;
+        left: 240px;
+        top: 168px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* div input text area */
+
+        position: absolute;
+        width: 680px;
+        height: 288px;
+        left: 240px;
+        top: 168px;
+
+        X: 240px
+        Y: 168px
+        W: 680px
+        H: 288px
+        X constraint: Left
+        Y constraint: Top
+
+
+6- Texto inpit text
+
+    - Properities
+        height: 288px;
+        width: 680px;
+        left: 0px;
+        top: 0px;
+        border-radius: nullpx;
+
+    - Content
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.
+
+    - Typography
+        font-family: Inter;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    - Colors  hex
+        background: #0A3871;
+
+    - Code CSS
+    /* ...aliquet non egestas. */
+
+        position: absolute;
+        width: 680px;
+        height: 288px;
+        left: 0px;
+        top: 0px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 150%;
+
+    /* or 48px */
+        color: #0A3871;
+
+        X: 0px
+        Y: 0px
+        W: 680px
+        H: 288px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 32px
+        Line height: 48px
+        Line height: 150%
+        Align: Left
+        Vertical align: Top
+        Fill: Solid
+        #0A3871
+
+
+7- Div Alerta maiúsculas / acento
+
+    - Properties
+        height: 18px;
+        width: 252px;
+        left: 240px;
+        top: 851px;
+        border-radius: 0px;
+
+    - Code CSS
+        /* Auto layout */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 8px;
+
+            position: absolute;
+            width: 252px;
+            height: 18px;
+            left: 240px;
+            top: 851px;
+
+            X: 240px
+            Y: 851px
+            W: 252px
+            H: 18px
+            X constraint: Left
+            Y constraint: Top
+
+
+8- # Ícone exclamação
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 1px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* bi:exclamation-circle-fill */
+
+        width: 16px;
+        height: 16px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 1px
+        W: 16px
+        H: 16px
+        X constraint: Left
+        Y constraint: Top
+
+
+9- Grupo ícone exclamação
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* Group */
+
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+
+        X: 0px
+        Y: 0px
+        W: 16px
+        H: 16px
+        X constraint: Scale
+        Y constraint: Scale
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+
+10- Vector ícone exclamação
+
+    - Properties
+        height: 16px;
+        width: 16px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+
+    - Colors
+        background: #495057;
+        Gray/gray-400
+        #495057
+
+    - Code CSS
+    /* Vector */
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+
+    /* Gray/gray-400 */
+        background: #495057;
+
+        X: 0px
+        Y: 0px
+        W: 16px
+        H: 16px
+        X constraint: Scale
+        Y constraint: Scale
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+
+11- Div Botões cript/descript
+
+    - Properties
+        height: 67px;
+        width: 680px;
+        left: 240px;
+        top: 885px;
+        border-radius: 0px;
+
+        Width 680px
+        Height Hug (67px)
+        Top 885px
+        Left 240px
+        Gap 24px
+
+    - Code CSS
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+
+        position: absolute;
+        width: 680px;
+        height: 67px;
+        left: 240px;
+        top: 885px;
+
+        X: 240px
+        Y: 885px
+        W: 680px
+        H: 67px
+        X constraint: Left
+        Y constraint: Top
+
+
+12- Botão cripto
+
+    - Component properties
+        Color="Dark blue";
+        State="Normal";
+
+    -Propoerties
+        height: 67px;
+        width: 328px;
+        left: 0px;
+        top: 0px;
+        border-radius: 24px;
+        padding: 24px;
+
+        Width 328px
+        Height Hug (67px)
+        Radius 24px
+        Padding 24px
+        Gap 8px
+
+    - Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 8px;
+
+        width: 328px;
+        height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+        background: #0A3871;
+        border-radius: 24px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        X: 0px
+        Y: 0px
+        W: 328px
+        H: 67px
+        Corner radius: 24px
+        X constraint: Left
+        Y constraint: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+13- Texto cripto - text
+
+    - Parent component
+        Button
+
+    - Properties
+        height: 19px;
+        width: 280px;
+        left: 24px;
+        top: 24px;
+        border-radius: nullpx;
+
+        Width Fill (280px)
+        Height Hug (19px)
+        Top 24px
+        Left 24px
+
+    - Content
+        Criptografar
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors - hex
+        background: #FFFFFF;
+
+    - Code CSS
+    /* Button */
+
+        width: 280px;
+        height: 19px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+    /* White */
+        color: #FFFFFF;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+        X: 24px
+        Y: 24px
+        W: 280px
+        H: 19px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 19px
+        Line height: 100%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: White
+        Fill: Solid
+        #FFFFFF
+
+
+14- Botão descript
+
+    - Components properties
+        Color="Light blue";
+        State="Normal";
+
+    - Properties
+        height: 67px;
+        width: 328px;
+        left: 352px;
+        top: 0px;
+        border-radius: 24px;
+        padding: 24px;
+
+        Width 328px
+        Height Hug (67px)
+        Left 352px
+        Radius 24px
+        Padding 24px
+        Gap 8px
+
+    - Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Borders
+        border: 1px solid #0A3871
+        1px Inner border
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        box-sizing: border-box;
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 8px;
+
+        width: 328px;
+        height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        X: 352px
+        Y: 0px
+        W: 328px
+        H: 67px
+        Corner radius: 24px
+        X constraint: Left
+        Y constraint: Top
+        Stroke Color Style: Dark blue/dark-blue-300
+        Stroke: Solid
+        #0A3871
+        Align: Inside
+        Width: 1px
+
+
+15- Texto decript - text
+
+    - Parent component
+        Button
+
+    - Properties
+        height: 19px;
+        width: 280px;
+        left: 24px;
+        top: 24px;
+        border-radius: nullpx;
+
+        Width Fill (280px)
+        Height Hug (19px)
+        Top 24px
+        Left 24px
+
+    - Content
+        Descriptografar
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        width: 280px;
+        height: 19px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+    /* Dark blue/dark-blue-300 */
+        color: #0A3871;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+        X: 24px
+        Y: 24px
+        W: 280px
+        H: 19px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 19px
+        Line height: 100%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+16- Div output text area
+
+    - Properties
+        height: 781px;
+        width: 336px;
+        left: 1032px;
+        top: 72px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* div output text area */
+
+        position: absolute;
+        width: 336px;
+        height: 781px;
+        left: 1032px;
+        top: 72px;
+
+        X: 1032px
+        Y: 72px
+        W: 336px
+        H: 781px
+        X constraint: Left
+        Y constraint: Top
+
+
+17- Texto output - text
+
+    - Properties
+        height: 781px;
+        width: 336px;
+        left: 0px;
+        top: 0px;
+        border-radius: nullpx;
+
+    - Content
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.
+
+    - Typography
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    - Colors - hex
+        background: #495057;
+        Gray/gray-400
+        #495057
+
+    - Code CSS
+    /* ...non egestas. */
+
+        position: absolute;
+        width: 336px;
+        height: 781px;
+        left: 0px;
+        top: 0px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 150%;
+
+        /* or 36px */
+
+    /* Gray/gray-400 */
+        color: #495057;
+
+        X: 0px
+        Y: 0px
+        W: 336px
+        H: 781px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 24px
+        Line height: 36px
+        Line height: 150%
+        Align: Left
+        Vertical align: Top
+        Fill Color Style: Gray/gray-400
+        Fill: Solid
+        #495057
+
+
+18- Div Botão copiar
+
+    - Properties
+        height: 67px;
+        width: 336px;
+        left: 1032px;
+        top: 885px;
+        border-radius: 0px;
+
+    - Code CSS
+        position: absolute;
+        width: 336px;
+        height: 67px;
+        left: 1032px;
+        top: 885px;
+
+        X: 1032px
+        Y: 885px
+        W: 336px
+        H: 67px
+        X constraint: Left
+        Y constraint: Top
+
+
+19- Botão copiar - button
+
+    - Component properties
+        Color="Light blue";
+        State="Normal";
+
+    - Properties
+        height: 67px;
+        width: 336px;
+        left: 0px;
+        top: 0px;
+        border-radius: 24px;
+        padding: 24px;
+
+        Width 336px
+        Height Hug (67px)
+        Radius 24px
+        Padding 24px
+        Gap 8px
+
+    - Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Borders - hex
+        border: 1px solid #0A3871
+
+        1px Inner border
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        box-sizing: border-box;
+
+    /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 8px;
+
+        position: absolute;
+        width: 336px;
+        height: 67px;
+        left: 0px;
+        top: 0px;
+
+    /* Dark blue/dark-blue-300 */
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+
+        X: 0px
+        Y: 0px
+        W: 336px
+        H: 67px
+        Corner radius: 24px
+        X constraint: Left
+        Y constraint: Top
+        Stroke Color Style: Dark blue/dark-blue-300
+        Stroke: Solid
+        #0A3871
+        Align: Inside
+        Width: 1px
+
+
+20- Texto copiar - text
+
+    - Parent component
+        Button
+
+    - Properties
+        height: 19px;
+        width: 288px;
+        left: 24px;
+        top: 24px;
+        border-radius: nullpx;
+
+    - Content
+        Copiar
+
+    - Typography
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    - Colors - hex
+        background: #0A3871;
+        Dark blue/dark-blue-300
+        #0A3871
+
+    - Code CSS
+    /* Button */
+
+        width: 288px;
+        height: 19px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+    /* Dark blue/dark-blue-300 */
+        color: #0A3871;
+
+    /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+        X: 24px
+        Y: 24px
+        W: 288px
+        H: 19px
+        X constraint: Left
+        Y constraint: Top
+        Font family: Inter
+        Font style: Regular
+        Font size: 16px
+        Line height: 19px
+        Line height: 100%
+        Align: Center
+        Vertical align: Top
+        Fill Color Style: Dark blue/dark-blue-300
+        Fill: Solid
+        #0A3871
+
+
+21- Div Caixa área de texto (saída)
+
+    - Properties
+        height: 944px;
+        width: 400px;
+        left: 1000px;
+        top: 40px;
+        border-radius: 0px;
+
+    - Code CSS
+    /* Div Caixa área de texto */
+
+        position: absolute;
+        width: 400px;
+        height: 944px;
+        left: 1000px;
+        top: 40px;
+
+        X: 1000px
+        Y: 40px
+        W: 400px
+        H: 944px
+        X constraint: Left
+        Y constraint: Top
+
+
+22- Caixa área de texto (saída)
+
+    - Properties
+        height: 944px;
+        width: 400px;
+        left: 0px;
+        top: 0px;
+        border-radius: 32px;
+
+    - Colors - hex
+        background: #FFFFFF;
+
+    - Shadows
+        box-shadow: 0px 24px 32px -8px #00000014;
+
+        X 0
+        Y 24
+        B 32
+        S -8
+        #000000 8%
+
+    - Code CSS
+    /* Rectangle 1 */
+
+        position: absolute;
+        width: 400px;
+        height: 944px;
+        left: 0px;
+        top: 0px;
+
+    /* White */
+        background: #FFFFFF;
+
+    /* shadow */
+        box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+        border-radius: 32px;
+
+        X: 0px
+        Y: 0px
+        W: 400px
+        H: 944px
+        Corner radius: 32px
+
+        X constraint: Left
+        Y constraint: Top
+
+        Fill Color Style: White
+        Fill: Solid
+        #FFFFFF
+
+        Effect style: shadow
+        Effect: Drop shadow
+        Radius: 32px
+        Offset: 0px, 24px
+        rgba(0, 0, 0, 0.08)
+
+        ---> fim <---
+
+

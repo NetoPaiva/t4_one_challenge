@@ -1,0 +1,51 @@
+Anotações vídeo extra
+
+    Como front-end utiliza o Figma
+
+- A plataforma do Figma
+
+    - fazer login
+
+    - Botão "share"
+        - canto superior direito
+        - permissões do arquivo
+
+    - Design de um projeto - pontos a observar
+        - arquivos / ícones
+        - estilização dos elementos
+
+    - Exportar elementos de um projeto
+        - seleciona elemento (clicar na imagem)
+        - menu lateral direito
+            - export
+            - image + (clica no +)
+                - escolher extensão/tipo de arquivo
+            - clicar nomanete no +
+                - tamanho 2x maior da imagem
+            - clicar mais uma vez no +
+                - tamanho 3x maior
+            - exporta tudo em pacote zip
+
+    - Exportar vetor com vários elementos
+        - Menu esquerdo
+        - todas as camadas do design
+        - cada elemento em uma camada
+        - selecionar todas as camadas da imagem
+        - botão direito / group selection
+        - nomear grupo
+        - seleciona a camada grupo
+        - Menu direito / design
+        - Export + (no pé do menu)
+            - mesmo procedimento
+                - clica no +; +; + para 3 tamanhos
+            - exportar o vetor como "svg"
+
+    - Inspecionar elementos
+        - aba inspect (no menu direito)
+        - exibe as propriedades dos elementos
+        - tem que copiar e colar cada parâmetro
+
+
+---> e foi só isso aí mesmo! <---
+
+        

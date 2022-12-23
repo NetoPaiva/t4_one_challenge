@@ -71,11 +71,11 @@ Passo a passo para realizar o Challenge Criptografia ONE/Alura
 		https://trello.com/c/SaVLlYgG
 
 5. Testar projeto
-	- A estrutura da página está OK
-	- O layout está OK
-	- As funcionalidades do JS
-		- entrada de texto está ok
-		- botão criptografar está ok
+	[ ] A estrutura da página está OK
+	[ ] O layout está OK
+	[ ] As funcionalidades do JS
+		[ ] entrada de texto está ok
+		[ ] botão criptografar está ok
 		- área para mostrar texto está ok
 		- botão copiar está ok
 		- botão descriptografar está ok

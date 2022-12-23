@@ -19,7 +19,7 @@ Anotações do andamento do projeto
 		<git init>
 
 	- configurar usário global
-		<git config --global user.name "seu-usário-no-github">
+		git config --global user.name "seu-usário-no-github">
 
 	- configurar email global
 		<git config --global user.email "seu-email">
@@ -42,7 +42,7 @@ Anotações do andamento do projeto
 	- adicionar repositório do github
 		<git remote add origin "endereço-do-repositório-no-github">
 
-	-verificar se está tudo ok
+	- verificar se está tudo ok
 		<git status>
 
 	- enviar versão para github (informando sempre destino e origem)
@@ -56,31 +56,60 @@ Anotações do andamento do projeto
 3. Criar pastas para organizar repositório do prrojeto
 
 	- documentação
-		- arquivos de anotações e orientações
+	- arquivos de anotações e orientações
 
 	- projeto
-		- pastas e arquivos com os códigos do projeto
+	- pastas e arquivos com os códigos do projeto
 
 
 4. Inicar a estrutura HTML
 
 	- criar "index.html" com a estrutura básica
-		-----------------------------------------
-			<!DOCTYPE html>
-			<html lang="pt-br">
-				<head>
-					<meta charset="UTF-8"/>
-					<title>NetoPaiva | codificador | t4 one</title>
-				</head>
-				<body>
-					<header></header>
-					<main></main>
-					<footer></footer>
-				</body>
-			</html>
-			<script>
-			</script>
-		-----------------------------------------
+	-----------------------------------------
+	<!DOCTYPE html>
+	<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>NetoPaiva | codificador | t4 one</title>
+	</head>
+	<body>
+		<header></header>
+		<main></main>
+		<footer></footer>
+		</body>
+	</html>
+	<script>
+	</script>
+	-----------------------------------------
 
 	-
+5.  Capturar elementos de design - Figma
+
+    - assistir ao vídeo de referência
+        Como Front-End utiliza o Figma
+        https://cursos.alura.com.br/como-front-end-utiliza-o-figma-c858
+
+    - exportar imagens para a pasta "images" do projeto
+        - logo.png
+        - logo.svg
+        - lupa.png
+        - lupa.svg
+        - exclamation.png
+        - exclamation.svg
+
+    - anotar propriedades CSS dos elementos
+        - layout desktop - página 1 e 2
+            - área total
+            - logo
+            - input
+            - área de texto
+            - botões
+            - aviso maiúsculas/acentos      
+
+
+
+
+
+
+
 

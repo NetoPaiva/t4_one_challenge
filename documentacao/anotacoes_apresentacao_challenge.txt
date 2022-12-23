@@ -10,7 +10,7 @@ Anotações da apresentação do challenge
 - Layout no FIGMA
 
 - Encriptar texto
-    - codificar mensagem para evitar leitura de quem não saiba descodificar
+    - codificar mensagem para evitar leitura de quem não saiba decodificar
     - seguir as regras para criptografas/descriptografar
 
 - Ferramentas e conceitos a serem trabalhados:
@@ -58,16 +58,15 @@ Anotações da apresentação do challenge
 
 
 - Trello
-    - organização / metodologia ágil
-    - compratilhar andamento do projeto
-    - agrega informações
-    - explicar tarefas / sprints
-    - colunas / cards de atividades
-    - instruções sobre o desafio
-    - material de apoio
-        - cursos e artigos e vídeos
-    - conteúdos relacionados com os cursos da trilha
-    - 
+	- organização / metodologia ágil
+	- compratilhar andamento do projeto
+	- agrega informações
+	- explicar tarefas / sprints
+	- colunas / cards de atividades
+	- instruções sobre o desafio
+	- material de apoio
+		- cursos e artigos e vídeos
+	- conteúdos relacionados com os cursos da trilha
 
 
 
