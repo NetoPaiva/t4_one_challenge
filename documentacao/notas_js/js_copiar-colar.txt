@@ -1,0 +1,291 @@
+Como construir a estrutura e função de copiar e colar texto
+
+
+Referências
+===========
+
+Documentação MDN
+
+	- html
+	https://developer.mozilla.org/pt-BR/docs/Web/HTML
+
+	- input
+	https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input
+
+	- textarea
+	https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/textarea
+
+	- label
+	https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label
+
+	- button
+	https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/button
+
+	- clipboard
+	https://developer.mozilla.org/en-US/docs/web/api/clipboard
+
+	- execCommand
+	https://developer.mozilla.org/pt-BR/docs/Web/API/Document/execCommand
+
+	- reload
+	https://developer.mozilla.org/pt-BR/docs/Web/API/Location/reload
+
+
+Tutorial
+	- Como copiar e colar com JavaScript
+	https://youtu.be/r2f1v7KrCsM
+
+
+Obs.: por questões de segurança, o recurso "colar" emite um alerta, pedindo autorização ao usuário, e poderá não funcionar em todos os navegadores. Testes realizados no Firefox e Chrome, sistemas Linux Mint e Windows 11, o recurso funcionou apenas no Chrome nos dois sistemas operacionais. No Firefox não funcionou.
+
+
+Estrutura HTML
+==============
+
+	- tags e meta tags básicas e iniciais
+	- campo de entrada de texto
+	- botão para copiar
+	- campo de saída de texto
+	- botão para colar
+	- botão para recarregar a página
+
+
+- Declarar as tags básicas iniciais do documento
+------------------------------------------------
+
+	- doctype
+	- lang
+	- head
+	- meta
+		- charset
+		- viewport
+	- title
+
+
+- Declarar as tags estruturais do documento
+-------------------------------------------
+
+	- body
+	- label do input
+	- textarea
+		- name
+		- rows
+		- cols
+		- class
+		- placeholder
+	- button
+		- type
+		- class
+
+	- label do output
+	- textarea
+		- name
+		- rows
+		- cols
+		- class
+		- placeholder
+	- button
+		- type
+		- class
+
+	- label refresh
+	- button
+		id
+
+
+Programação JS
+==============
+
+	- receber os seletores HTML
+	- aguardar o clique do usuário para copiar/colar
+	- adicionar evento para recarregar a página
+
+
+- Receber os seletores HTML de copiar e armazenar em constantes
+---------------------------------------------------------------
+
+	- seletor que recebe o elemento botão "copiar"
+		document.querySelector('.copiar');
+
+	- atribuir o seletor a uma constante "btnCopiar"
+		const btnCopiar = document.querySelector('.copiar');
+
+	- seletor que recebe o elemento entrada de texto
+		document.querySelector('.entrada');
+
+	- atribuir o seletor a uma constante "textEntrada"
+		const textEntrada = document.querySelector('.entrada');
+
+
+- Aguardar o clique do usuário para copiar
+------------------------------------------
+
+	- chamar a constante "btnCopiar" e
+	- vincular o comando para aguardar evento
+		btnCopiar.addEventListener();
+
+	- atribuir o parâmentro do clique do usuário
+		('click');
+
+	- criar a função ler e copiar após clique do usuário
+		(e) => { }
+
+	- declarar a funcionalidade ler e copiar o texto dentro da função
+		{ navigator.clipboard.writeText(); }
+
+	- indicar que o texto a copiar está na constante textEntrada
+		(textEntrada.value);
+
+	- incluir alerta avisando ao usuário a copia do texto
+		alert('Texto copiado com sucesso!');
+
+
+- Receber os seletores HTML de colar e armazenar em constantes
+--------------------------------------------------------------
+
+	- seletor que recebe o elemento botão "colar"
+		document.querySelector('.colar');
+
+	- atribuir o seletor a uma constante "btnCopiar"
+		const btnColar = document.querySelector('.colar');
+
+	- seletor que recebe o elemento saída de texto
+		document.querySelector('.saida');
+
+	- atribuir o seletor a uma constante "textSaida"
+		const textSaida = document.querySelector('.saida');
+
+
+- Aguardar o clique do usuário para colar
+-----------------------------------------
+
+	- chamar a constante "btnColar" e
+	- vincular o comando para aguardar evento
+		btnColar.addEventListener();
+
+	- atribuir o parâmentro do clique do usuário
+		('click');
+
+	- incluir "async" para aguardar o processamento
+		('click', async);
+
+	- criar a função com parâmentro "e" do evento
+		(e) => { }
+
+	- declarar a funcionalidade para aguardar o processamento
+		{ await }
+
+	- e a funcionalidade de colar o texto
+		{ await navigator.clipboard.readText(); }
+
+	- criar uma constante para armazenar as funcionalidades
+		{ const colar = await navigator.clipboard.readText(); }
+
+	- indicar que o valor da constante textSaida é o texto a ser colado
+		{... textSaida.value = colar; }
+
+	- incluir alerta avisando ao usuário que o texto será colado
+		{... alert('Clique em OK para colar o texto.'); }
+
+-obs.: se o navegador aceitar a funcionalidade "colar", pedirá permissão ao usuário todas as vezes que realizar esta ação.
+
+
+- Adicionar evento para recarregar a página
+-------------------------------------------
+
+	- chamar o botão e armazenar em uma constante
+		const btnRefresh = document.querySelector('#refresh')
+
+	- chamar constante e adicionar evento do clique do usuário
+		btnRefresh.addEventListener('click');
+
+	- vincular a função anônima para recarregar a página
+		btnRefresh.addEventListener('click', () => { });
+
+	- definir o método "reload" para a função
+		{ location.reload() }
+
+	- recebendo o parâmentro "true" para ignorar o cache ao recarregar
+		location.reload(true);
+
+
+Código completo - HTML e JS
+===========================
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neto Paiva">
+    <meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
+    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
+    <title>Neto | Refresh</title>
+
+</head>
+
+<body>
+
+	<label name="input">
+		<p>Entrada do texto:</p>
+		<textarea name="entrada-texto" class="entrada" rows="3" cols="70" placeholder="Digite seu texto..."></textarea>
+		<br>
+		<button type="input" class="copiar">Copiar</button>
+	</label>
+
+	<br><br>
+
+	<label name="output">
+		<p>Saída do texto:</p>
+		<textarea name="saida-texto" class="saida" cols="70" rows="3" placeholder="Cole aqui seu texto..."></textarea>
+		<br>
+		<button type="input" class="colar">Colar</button>
+		<en>--> Infelizmente, não funciona no Firefox! [; (</en>
+	</label>
+
+	<br><br>
+
+	<label name="refresh">
+		<button id="refresh">Recarregar a página!</button>
+	</label>
+
+</body>
+
+</html>
+
+<script>
+
+	const btnCopiar = document.querySelector('.copiar');
+	const textEntrada = document.querySelector('.entrada');
+
+	const btnColar = document.querySelector('.colar');
+	const textSaida = document.querySelector('.saida');
+
+	btnCopiar.addEventListener('click', (e)=> {
+		navigator.clipboard.writeText(textEntrada.value);
+		alert('OK! texto copiado. \n
+			Para ler a mensagem copiada:\n
+			- Clique em "colar" ou \n
+			- digite CTRL + V na área indicada.');
+	});
+
+	btnColar.addEventListener('click', async (e) => {
+		const colar = await navigator.clipboard.readText();
+		textSaida.value = colar;
+		alert('Clique em OK! e a mensagem copiada será colada na área indicada.');
+	});
+
+
+	const btnRefresh = document.querySelector('#refresh');
+
+	btnRefresh.addEventListener('click', () => {
+		location.reload(true);
+	} );
+
+</script>
+
+---
+
+.fim

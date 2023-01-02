@@ -1,0 +1,348 @@
+Curso HTML/CSS
+
+parte 1 - Crie uma página da Web
+
+
+Tags HTML / CSS
+===============
+
+HTML - tags estruturais
+=======================
+
+- <!DOCTYPE html> - tag de informação
+- <html></html> - tag de conteúdo envolve todo o conteúdo da página
+	- <html lang="pt-br"> - para informar o idioma utilizado na página
+- <head></head> - tag de seção da informação e contém as tags:
+	- <meta charset="UTF-8"> - dicionário para renderizar caracteres especiais e acentuados
+	- <title></title> - para informar o título da página, que aparece na aba do navegador
+- <body></body> - tag da seção do conteúdo, contém todas as marcações de texto
+
+
+Marcação de texto
+=================
+
+Tags de conteúdos - é preciso abrir e fechar o comando da tag
+    - <h1>título principal</h1>
+    - <h2>título secundário</h2>
+    - <p>parágrafo</p>
+    - <strong>negrito</strong>
+    - <em>itálico ênfase</em>
+    - <ul>lista não ordenada</ul>
+    - <ol>lista ordenada</ol>
+    - <li>cada linha da lista</li>
+
+
+Incluir imagem
+==============
+
+- declarar a tag logo no início do <body>
+- <img  src="banner.jpg">
+	- tag img - para informar que este elemento é uma imagem
+	- src - (source) irá indicar a fonte de localização da imagem
+	-  indica que esta imagem é a banner.jpg e está na mesma pasta de index.html
+- <img  src="images/banner.jpg">
+	-  indica que a imagem banner.jpg e está dentro da pasta images
+	- e a pasta images está na mesma pasta do arquivo index.html
+
+
+Divisões do conteúdo
+====================
+
+Tags semânticas - criar espaços específicos para cada conteúdo
+- não interferem no visual da página
+- marcam apenas a divisão de conteúdo (metadados)
+
+Header
+
+- <header>envolve todo conteúdo desta seção</header>
+- o cabeçalho da página
+- o nome mais importante
+- geralmente onde está o <h1>título da página</h1>
+- dica: usar "padding-left: 20px;" para dar um respiro na lateral
+
+
+Div
+
+- <div>envolve todo o conteúdo desta divisão</div>
+- separa conteúdos em seções
+- pode receber "id" ou "class" para especificar qual é a divisão
+
+
+Div id ( # )
+
+- id - conteúdos únicos na página
+	- declaração no html
+		- <div id="nome do id">
+	- declaração no css
+		- #nomedoid { estilo; }
+
+
+Div class ( . )
+
+- class - conteúdos que repetem na página
+	- declaração no html
+		- <div class="nome da classe">
+	- declaração no css
+		- .nomedaclasse { estilo; }
+
+
+CSS - (Folha de estilo em cascata)
+=================================
+
+OBS.; no CSS, todos os elementos são alinhados verticalmente pela base
+
+
+Definir estilos aos elementos do HTML
+====================================
+
+
+Inline (dentro de cada tag do <body>)
+------------------------------------
+
+- <p style="font-size: 20px"> - define estilo (fonte tamanho 20 pixels) a este parágrafo
+	- propriedade "style"
+	- atribuiu "="
+	- conteúdo "font-size"
+	- valor ": 20px"
+- <h1 style="text-align: center"> define estilo centralizado ao título
+- <p style=" font-size: 20px; text-align: center">
+	- mais de um conteúdo na mesma propriedade, separar com ";"
+
+
+Com a tag <style> dentro do <head> do html 
+------------------------------------------
+	
+- <style>marcações css</stile>
+
+		<head>
+			<style>
+				h1  { text-align: center }
+				p { font-size: 20px; text-align: center }
+			</style>
+		</head>
+
+
+Em arquivo próprio para o estilo <arquivo.css>
+----------------------------------------------
+
+- Salvar arquivo "style.css" dentro da mesma pasta do index.html
+- Fazer a referência do arquivo "style.css" no <head> do arquivo "index.html"
+		
+		<head>
+			<link rel="stylesheet" href="style.css">
+		</head>
+		
+- Escrever todas as marcações do CSS com as referências às tags html
+
+		h1  {
+			text-align: center;
+		}
+		
+		p {
+			 font-size: 20px; 
+			text-align: center;
+		}
+		
+		.class {
+			...
+		}
+		
+		#id {
+			...
+		}
+
+
+Definir cor no CSS
+==================
+
+
+- Acompanhar a mesma ordem da estrutura do html
+
+		body {
+			background: #CCCCCC;
+		}
+		
+		strong {
+			color: #FF0000;
+		}
+		
+- Determinar estilo para uma tag específica
+	- por exemplo, apenas os <strong> que estão dentro de <em>
+
+		em strong {
+			color: blue;
+		}
+
+
+Sistema de cor hexadecimal
+--------------------------
+
+- numérico + letras - permite maior número de combinações
+	- 0123456789ABCDEF
+- tem base no RGB
+- estrutura do código hexadecimal (hash + 6 caracteres)
+	- # _ _ _ _ _ _
+		- 2 primeiros para marcar o red
+		- 2 do meio para marcar o green
+		- 2 finais para marcar o blue
+	- 0 (zero) é ausência de luz/cor
+	- F é o máximo de cor
+	- a escala tonal vai do 0 ao F
+	- por exemplo, para representar a cor preta (ausência de luz/cor)
+		- #000000
+		- #FFFFFF (seria o branco - total de luz/cor)
+		- #CCCCCC (cinza claro está na escala tonal mais perto do branco do que do preto)
+		- #FF0000 (vermelho no total e green e blue na ausência de luz/cor)
+		- #00FF00 (verde no total e red e blue na ausência de luz/cor)
+		- #0000FF (blue no total e red e green na ausência de luz/cor)
+
+
+Sistema de cor na escala 255
+----------------------------
+
+- Combinação do RGB
+- com 255 níveis de combinação/tonalidade
+- 0 (zero) também é ausência
+- 255 é o máximo de luz/cor
+- a representação deste sistema
+	- rgb(255,255,255) - branco
+	- rgb(0,0,0) - preto
+	- rgb(0,0,255) - blue
+	- rgb(0,255,0) - green
+	- rgb(255,0,0) - red
+
+
+Sistema de cor nominal
+----------------------
+
+- Utiliza nomes definidos
+	- red
+	- blue
+	- green
+	- black
+	- grey
+	- darkgrey
+
+
+Definir estilo para itens específicos do html
+=============================================
+
+
+id - identificador
+
+- único para cada elemento declarado
+- tem que declarar dentro da tag html
+	- <p id="nome-do-identificador">
+- e declarar lá no arquivo css - a sintaxe é "#nome-do-id"
+	- #nome-do-identificador {
+	             mfotn-size: 20px;
+	  }
+	  
+
+class - classes
+
+- geral para todo os elementos do documento que a classe seja declarada
+- tem que declarar dentro da tag html
+	- <li class="itens">linha da lista</li>
+- e declarar no arquivo css - a sintaxe é ".nome-da-classe"
+	- .itens {
+	        font-style: italic;
+	  }
+- irá aplicar o estilo em todos elementos com esta classe
+
+
+
+Parâmetros de dimensão do CSS
+-----------------------------
+
+
+Dica - usar a ferramenta do desenvolvedor no navegador (F12)
+
+- para captar informações
+- a estrutura html
+- os estilos css
+- testar comando (digitando no console)
+
+
+Parâmetros das dimensões do CSS
+-------------------------------
+
+- largura (width) [uidff]- definir tamanho em uma unidade de medida
+	- width:100% (responsivo)
+		- obs.: a imagem altera proporcionalmente, basta alterar um valor
+
+- altura (height) [rait] - definir tamanho em uma unidade de medida
+	- height: 100px
+	- 
+- espaçamento interno (padding) [péddin]
+	- serve para criar um "respiro" entre este elemento e os próximos a ele;
+	- definir um espaço irá aumentar o tamanho do elemento todo
+	- configura 4 dimensões - topo, lado esquerdo e direito e a base
+		- padding: 20px; - defini as 4 dimensões
+		- padding top: 20px; - apenas para o topo do elemento
+		- 
+- espaçamento externo (margin) [máargen]
+	- cria um espaço para fora do elemento, não altera seu tamanho
+	- cria área entre os elementos próximos
+		- margin left: 40px; - criar espaço para fora do elemento, do lado esquerdo
+		- margin: 40px; - cria espaço nos 4 lados do elemento
+
+
+Estilo CSS para imagem
+======================
+
+- adicionar no HTML um identificador para imagem "banner"
+	- <img  id="banner" src="banner.jpg">
+- incluir o "id" banner no arquivo CSS antes do <h1>
+	- #banner {  width: 100%; }
+
+
+Posicionar os elementos na página
+=================================
+
+Display Inline / Block
+----------------------
+
+- Display block
+	- elemento ocupa toda a largura da página
+	- bloqueia o conteúdo daquela linha
+	- independente do tamanho (largura)
+	- { display: block; }
+
+- Display inline
+	- não bloqueia a largura
+	- não deixa alterar espaçamento interno / externo
+	- { display: inline; }
+
+- Display inline block 
+	- ocupa apenas o tamanho do conteúdo
+	- permite alterar largura e espaçamento interno / externo
+	- { display: inline-block; 
+	  vertical-align: top;   (para alinhar elementos pelo topo)
+	  widht: 20%
+	  margin right: 15%; }
+
+
+Front-end
+=========
+
+UX - user experience
+
+- cuida da usabilidade do site
+- como entregar as informações
+- a forma / estrutura
+
+
+UI -  user interface
+
+- design
+- definir o visual do site
+
+
+Dev front-end
+
+- transforma em código as definições do UI e do UX
+- recebe as definições de estilo / forma
+- transforma tudo em código
+
+

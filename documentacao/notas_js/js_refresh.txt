@@ -1,0 +1,54 @@
+Como recarregar página Web com JS
+
+
+referências:
+    https://www.youtube.com/watch?v=Lo9jAT9wGc8
+		- sobre a construção da estrutura e programação
+    https://developer.mozilla.org/pt-BR/docs/Web/API/Location/reload
+		- sobre o método "location.reload()"
+
+
+Recarregar a página Web
+    - a partir de um evento DOM
+    - clicando em um botão específico
+
+
+HTML básico
+
+- Dentro da tag <head> link para o script JS
+	- o atributo "defer" é usado para scripts externos
+    - faz o navegador carregar o código JS depois do HTML
+    - e na ordem que aparecerm no documento
+
+        <script src="js/script.js" defer></script>
+
+
+- Dentro da tag <body> a estrutura HTML do botão
+	- id parachamar este elemento
+
+		<button id="refresh">Clique para recarregar a página!</button>
+
+
+JavaScript
+
+	- chamar o botão e armazenar em uma constante
+		- criar a constante "btn"
+		- atribuir o comando de seleção
+		- definir o seletor do CSS como parâmetro
+
+			const btn = document.querySelector('#refresh')
+
+
+	- adicoinar o evento para recarregar a página
+		- atribuir à constante o evento
+		- definir o parâmetro do evento como "click"
+		- adicionar função anônima "() =>{ }"
+		- para executar método location.reload()
+		- com o parâmetro "true" para recarregar ignorando o cache
+
+			btn.addEventListener('click', () => {
+				location.reload(true);
+			} )
+
+
+.fim

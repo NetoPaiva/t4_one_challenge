@@ -1,0 +1,155 @@
+js_funcionalidades_notas
+
+
+Anotações - funcionalidades JavaScript para projeto challenge-t4
+================================================================
+
+
+
+1. Remover acentos/sinais ortográficos
+======================================
+
+Criar função "normalize()" com expressões regulares e comando replace
+
+
+	.normalize('NFD').replace(/[\u0300-\u036f]/g, ' ');
+	
+- função "normalize"
+- parâmetro "NFD" (Formato de normalização canônico de decomposição)
+	- irá decompor a letra acentuada em caracteres separados ( letra + acento)
+	- salvando dentro de um array
+	- NFC - compõem os caracteres
+	- NFD - decompõem os caracteres
+- comando "replace" com expressão regular 
+	- com os caracteres a serem substituídos
+	- com base na tabela Unicode (latin extended-A)
+	- informando o intervalo de caracteres a serem substituídos
+	- trocar por String vazia " "
+	- removendo todos os acentos e caracteres do texto
+
+
+
+2. Botões para copiar e colar texto
+===================================
+
+- campo para entrada do texto
+- botão para copiar texto
+- campo para saída do texto
+- botão para colar texto
+	- o navegador pedirá permissão para colar conteúdo da memória
+	- pode não funcionar em alguns navegadores
+		- verificar tabela de compatibilidade
+			- developer.mozilla.org/en-US/docs/web/api/clipboard
+
+
+Estrutura HTML
+==============
+
+Campo de entrada de texto
+
+	<label>Entrada de texto</label>
+	<textarea name="entrada de texto" class="entrada_texto" placeholder="digite seu texto..." rows="5" cols="100"></textarea>
+	<br><br>
+	<button type="button" class ="copiar">copiar</button>
+	
+- tag de identificação "label"
+- tag textarea para entrada de texto com os atributos:
+	- name - identificar o tipo de comando;
+	- class - definir classe para uso na estilização e programação
+	- placeholder - exibir mensagem ao usuário;
+	- rows - definir quantidade de linhas, tamanho vertical
+	- cols - definir quantidade de colunas (10 pixels), tamanho horizontal
+- tag para quebra de linha, duas quebras de linha <br>
+- tag para criar botão "copiar"<button>copiar</button> com os atributos
+	- type - para não recarregar a página quando usuário clicar
+	- submit - recarregaria a página após clique do usuário
+	- class - para identificar o botão copiar
+
+Campo de saída do texto
+
+	<label>Saída do texto</label>
+	<textarea name="saida de texto" class="saida" placeholder="aqui o texto do copia-e-cola..." rows="5" cols="100"></textarea>
+	<br><br>
+	<button type="button" class ="colar">colar</button>
+	
+- 
+
+
+
+JavaScript
+==========
+
+Receber seletores do HTML no JS
+-------------------------------
+
+	const btnCopiar = document.querySelector('.copiar)';
+	const entradaTexto = document.querySelector('.entrada_texto');
+	
+	const btnColar = document.querySelector('.colar)';
+	const entradaTexto = document.querySelector('.saida_texto');
+
+- document.querySelector();
+	- comando para chamar o seletor HTML
+- (.copiar)
+	- identifica qual seletor HTML deve chamar, do tipo class (.copiar)
+	- atribui como parâmetro do comando querySelector
+- const btnCopiar =
+	- atribui comando a  constante "btnCopiar"
+- const entradaTexto = 
+	- criar constante para receber a entrada de texto
+- document.querySelector ();
+	- constante recebe como valor o comando querySelector
+	- e a classe do seletor como parâmetro (.entrada_texto)
+- mesmo procedimento para botão colar (saída do texto)
+
+
+Aguardar o clique do usuário no botão "copiar"
+-----------------------------------------------
+
+	btnCopiar.addEventListener('click', (e) => {
+		navigator.clipboard.writeText(entradaTexto.value);
+		alert('OK, texto copiado com sucesso!!');
+	});
+	
+- btnCopiar 
+	- utilizar a constante que armazena o conteúdo do seletor "copiar"
+- .addEventListener('click') 
+	- aguardar o evento do clique do usuário
+- (e) => { }
+	- criar função "(e)"
+		- a ser executada depois do clique do usuário
+	- com estrutura "=>"
+		- estrutura "arrow function" (sintaxe mais curta)
+	- se estiver usando "submit" no botão ao invés de "button" e não quiser que a página seja recarregada após o clique do usuário é preciso declarar o "preventEvent" dentro do bloco da função do evento:
+		- { e. preventDefault(); } 
+- {navigator.clipboard.writeText(entradaTexto.value);}
+	- comando "navigator" dentro do bloco da função do evento "(e)"
+	- com a propriedade "clipboard" que grava String
+	- e com o método "writeText()" de leitura do dado gravado
+		- irá copiar para memória o dado gravado
+	- e como parâmetro  a constante "entradaTexto"
+		- para especificar o dado a gravar
+	- chamando o valor da constante - "value".
+- alert('OK, texto copiado com sucesso!!');
+	- alerta opcional para confirmar ação realizada
+
+
+Aguardar o clique do usuário no botão "colar"
+---------------------------------------------
+
+	btnColar.addEventListener('click', async (e) => {
+		const resposta = await navigator.clipboard.readText(saidaTexto.value);
+		saidaTexto.value =  resposta;
+		alert('Clique em OK para inserir o texto!!);
+	});
+	
+- async / await - aguardar o processamento
+- readText - método para colar (chamar o conteúdo da memória)
+- atribuindo resultado à constante "resposta"
+- que será atribuída à consta saidaTexto
+
+
+
+
+---
+. fim

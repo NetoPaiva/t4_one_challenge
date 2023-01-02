@@ -2,6 +2,7 @@ Anotações do andamento do projeto
 
 
 1. Criar repositório no GitHub
+==============================
 
 	- Login na plataforma GitHub
 	- Repositories / New
@@ -9,7 +10,10 @@ Anotações do andamento do projeto
 	- Create repository
 
 
-2. Iniciar, via terminal, o monitoramento de versão e fazer primeiro commit
+2. Iniciar monitoramento de versão / primeiro commit
+====================================================
+
+- via terminal
 
 	- criar pasta para o projeto
 
@@ -54,6 +58,7 @@ Anotações do andamento do projeto
 
 
 3. Criar pastas para organizar repositório do prrojeto
+======================================================
 
 	- documentação
 	- arquivos de anotações e orientações
@@ -63,6 +68,7 @@ Anotações do andamento do projeto
 
 
 4. Inicar a estrutura HTML
+==========================
 
 	- criar "index.html" com a estrutura básica
 	-----------------------------------------
@@ -82,8 +88,9 @@ Anotações do andamento do projeto
 	</script>
 	-----------------------------------------
 
-	-
+
 5.  Capturar elementos de design - Figma
+========================================
 
     - assistir ao vídeo de referência
         Como Front-End utiliza o Figma
@@ -107,7 +114,30 @@ Anotações do andamento do projeto
             - aviso maiúsculas/acentos      
 
 
+6. Pesqusiar soluções JavaScript
+================================
 
+    - Copiar / Colar
+    - Codificar/Decodificar
+    - Resfresh 
+    - filtrar números, acentos, maiúsculas
+    - converter acentos e maiúsculas
+
+
+7. Aplicar conceitos do Curso de CSS
+====================================
+
+    - definir estilos aos elementos HTML
+    - posicionar elementos na página
+    - 
+
+
+8-
+==
+
+
+9-
+==
 
 
 
