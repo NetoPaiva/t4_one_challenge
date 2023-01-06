@@ -1188,7 +1188,7 @@ Elementos da página 2
         Y constraint: Top
 
 
-6- Texto inpit text
+6- Texto input text
 
     - Properities
         height: 288px;

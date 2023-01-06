@@ -35,14 +35,13 @@ Tags de conteúdos - é preciso abrir e fechar o comando da tag
 Incluir imagem
 ==============
 
-- declarar a tag logo no início do <body>
 - <img  src="banner.jpg">
 	- tag img - para informar que este elemento é uma imagem
 	- src - (source) irá indicar a fonte de localização da imagem
 	-  indica que esta imagem é a banner.jpg e está na mesma pasta de index.html
 - <img  src="images/banner.jpg">
-	-  indica que a imagem banner.jpg e está dentro da pasta images
-	- e a pasta images está na mesma pasta do arquivo index.html
+	-  indica que a imagem banner.jpg está dentro da pasta images
+	-  e a pasta images está na mesma pasta do arquivo index.html
 
 
 Divisões do conteúdo
@@ -51,6 +50,7 @@ Divisões do conteúdo
 Tags semânticas - criar espaços específicos para cada conteúdo
 - não interferem no visual da página
 - marcam apenas a divisão de conteúdo (metadados)
+
 
 Header
 
@@ -92,21 +92,26 @@ CSS - (Folha de estilo em cascata)
 OBS.; no CSS, todos os elementos são alinhados verticalmente pela base
 
 
-Definir estilos aos elementos do HTML
-====================================
+Como definir estilos aos elementos do HTML
+==========================================
 
 
-Inline (dentro de cada tag do <body>)
-------------------------------------
+Inline - (dentro de cada tag do <body>)
+------------------------------------------
 
-- <p style="font-size: 20px"> - define estilo (fonte tamanho 20 pixels) a este parágrafo
+- <p style="font-size: 20px">
+    - define estilo (fonte tamanho 20 pixels) a este parágrafo
 	- propriedade "style"
 	- atribuiu "="
 	- conteúdo "font-size"
 	- valor ": 20px"
-- <h1 style="text-align: center"> define estilo centralizado ao título
+
+- <h1 style="text-align: center">
+    - define estilo centralizado ao título
+
 - <p style=" font-size: 20px; text-align: center">
-	- mais de um conteúdo na mesma propriedade, separar com ";"
+	- quando tem mais de um conteúdo na mesma propriedade
+        - separar com "ponto-e-vírgula" (;)
 
 
 Com a tag <style> dentro do <head> do html 
@@ -139,7 +144,7 @@ Em arquivo próprio para o estilo <arquivo.css>
 		}
 		
 		p {
-			 font-size: 20px; 
+			font-size: 20px; 
 			text-align: center;
 		}
 		
@@ -177,16 +182,22 @@ Definir cor no CSS
 Sistema de cor hexadecimal
 --------------------------
 
-- numérico + letras - permite maior número de combinações
+    - numérico + letras
+    - permite maior número de combinações
 	- 0123456789ABCDEF
-- tem base no RGB
+    - tem base no RGB
+
+
 - estrutura do código hexadecimal (hash + 6 caracteres)
+
 	- # _ _ _ _ _ _
+
 		- 2 primeiros para marcar o red
 		- 2 do meio para marcar o green
 		- 2 finais para marcar o blue
+
 	- 0 (zero) é ausência de luz/cor
-	- F é o máximo de cor
+	- F é o máximo de luz/cor
 	- a escala tonal vai do 0 ao F
 	- por exemplo, para representar a cor preta (ausência de luz/cor)
 		- #000000
@@ -267,7 +278,7 @@ Dica - usar a ferramenta do desenvolvedor no navegador (F12)
 Parâmetros das dimensões do CSS
 -------------------------------
 
-- largura (width) [uidff]- definir tamanho em uma unidade de medida
+- largura (width) [uidiff]- definir tamanho em uma unidade de medida
 	- width:100% (responsivo)
 		- obs.: a imagem altera proporcionalmente, basta alterar um valor
 

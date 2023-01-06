@@ -1,0 +1,172 @@
+JS - minhas soluções de funcionalidades ao Challenge Decodificador de Texto
+
+Referência:
+
+-MDN - funções
+    https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions
+
+
+    1. Funções auxiliares - para simplificar o código
+    ==================================================
+        1.1. buscaId - busca elemento HTML pelo ID
+        1.2. copiaMemo - copia para memória o valor de um objeto
+        1.3. limpaArea - limpa o valor de um objeto
+
+
+    2. Funções dos botões
+    =====================
+        2.1.    codificar
+        2.2.    decodificar
+        2.3.    copiar
+        2.4.    colar
+        2.5.    refresh
+
+
+
+1.  Funções auxiliares
+======================
+
+
+1.1. buscaId
+============
+
+    - Simplifica o método de buscar elemento HTML pelo ID
+
+        function buscaId(b){
+            return document.getElementById(b);
+        }
+
+    - o seu uso seria assim para buscar o elemento HTML "saida":
+
+        buscaId('saida');
+
+
+1.2. copiaMemo
+==============
+
+    - Simplifica a declaração da API "clipboard" com a interface "navigator"
+      para armazenar na memória o valor de um objeto
+
+	    function copiaMemo(m){
+		    return navigator.clipboard.writeText(m.value);
+	    }
+
+    - seu uso seria assim para copiar o texto da variável copia:
+
+            copiaMemo(copia);
+
+
+1.3. limpaArea
+===============
+
+    - transforma em função o comando de limpar o campo de texto do HTML,
+      utilizando o método para buscar elemento HTML pelo ID
+      e atribuindo a seu valor uma String vazia
+
+	        function limpaArea(a){
+		        buscaId(a).value='';
+	        }
+
+
+    - o seu uso seria assim no código para limpar o campo HTML "saida":
+
+            limpaArea('saida');
+
+
+
+2.  Funções dos botões
+======================
+
+
+2.1.    Codificar
+=================
+
+    - busca o elemento HTML pelo ID e cria variável
+      para receber o valor deste elemento;
+
+    - rearmazena na mesma variável a verificação de caracteres indevidos,
+      utilizando os métodos:
+        - .normalize() - decomposição do texto em caracteres separados
+        - .replace() - troca caracteres indevidos por conteúdo vazio
+        - .toLowerCase() - transforma tudo em minúscula;
+
+    - codifica o conteúdo da variável, seguindo a exata ordem de substituição
+      realizada pelo método "replace" e rearmazena na mesma variável;
+ 
+    - busca elemento HTML e exibe como valor o conteúdo da variável;
+
+    - limpa o elemento HTML de entrada de dados e encerra a ação do botão.
+
+	    function codificar(){
+		    var doc = buscaId('entrada').value;
+
+		    doc = doc
+			    .normalize('NFD')
+			    .replace(/[^a-zA-Z\s]/g, "")
+			    .toLowerCase();
+
+        //	só nesta ordem codifica e decodifica corretamente
+		    doc = doc.replace(/e/g, 'enter');
+		    doc = doc.replace(/i/g, 'imes');
+		    doc = doc.replace(/a/g, 'ai');
+		    doc = doc.replace(/o/g, 'ober');
+		    doc = doc.replace(/u/g, 'ufat');
+
+		    buscaId('saida').value = doc;
+		    limpaArea('entrada');
+	    }
+
+
+2.2.    Decodificar
+===================
+
+    - repete o processo Codificar, invertendo a susbstituição de caracteres;
+    - não analisa caracretes indevidos.
+
+	function decodificar(){
+
+		var doc = buscaId('entrada').value;
+
+		doc = doc.replace(/enter/g, 'e');
+		doc = doc.replace(/imes/g, 'i');
+		doc = doc.replace(/ai/g, 'a');
+		doc = doc.replace(/ober/g, 'o');
+		doc = doc.replace(/ufat/g, 'u');
+
+		buscaId('saida').value = doc;
+		limpaArea('entrada');
+	}
+
+
+
+2.3.    Copiar
+==============
+
+    - automatiza a cópia de texto e limpeza do conteúdo do elemento HTML,
+      criando variável para armazenar texto copiado.
+
+        function copiar(){
+            var cop = buscaId('saida');
+            copiaMemo(cop);
+            limpaArea('saida');
+        }
+      
+
+2.4.    Colar
+=============
+
+
+
+
+2.5.    Refresh
+===============
+
+
+
+
+
+
+
+
+---
+.fim
