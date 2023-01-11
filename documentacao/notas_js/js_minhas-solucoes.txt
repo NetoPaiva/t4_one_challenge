@@ -2,8 +2,14 @@ JS - minhas soluções de funcionalidades ao Challenge Decodificador de Texto
 
 Referência:
 
--MDN - funções
+- MDN - funções
     https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions
+
+- W3Schools - arrow function
+    https://www.w3schools.com/js/js_arrow_function.asp
+
+- Tutorial - transformar em arrow function
+    vídeo - https://youtu.be/_kCCmAFa2Zk
 
 
     1. Funções auxiliares - para simplificar o código
@@ -41,6 +47,50 @@ Referência:
         buscaId('saida');
 
 
+1.1.1.  buscaId em versão arrow-function
+========================================
+
+    Como declarar em arrow-function uma função normal:
+
+    - transformar o nome da função em uma variável do tipo "let";
+    - omitir a palavra-chave "function";
+    - atribuir à variável o parâmetro da função "(b)"
+      neste caso, por ter apenas 1 parâmetro, pode omitir os parênteses (),
+      mantendo apenas o valor do parãmentro "b";
+    - acrescentar o sinal da seta "=>" entre o parâmetro e o bloco de instruções;
+    - declarar a instrução da função sem abrir e fechar chaves "{}";
+    - em geral, nas funções do tipo arrow o termo "return" pode ser omitido.
+
+    |------------------------------------------------------------------------|
+
+                - função normal
+                
+                function buscaId(b){
+                    return document.getElementById(b);
+                }
+        
+
+        - função do tipo arrow
+
+        let buscaId = b => document.getElementById(b);
+        --- ------- - - -- ---------------------------
+         |     |    | |  |          |
+         |     |    | |  |          |_- instrução da função [sem o "return"]
+         |     |    | |  |
+         |     |    | |  |_- sinal da seta [indica a função do tipo "arrow"]
+         |     |    | |
+         |     |    | |_- parâmetro da função [por ser só 1, não precisa ()]
+         |     |    |
+         |     |    |_- sinal de atribuição
+         |     |
+         |     |_- nome da função é transformado em nome da variável
+         |
+         |_- declaração de variável do tipo "let" [não pode alterar valor]
+
+    |------------------------------------------------------------------------|
+
+
+
 1.2. copiaMemo
 ==============
 
@@ -53,7 +103,14 @@ Referência:
 
     - seu uso seria assim para copiar o texto da variável copia:
 
-            copiaMemo(copia);
+        copiaMemo(copia);
+
+
+1.2.1.  copiaMemo em versão arrow-function
+==========================================
+
+        let copiaMemo = m => navigator.clipboard.writeText(m.value);
+
 
 
 1.3. limpaArea
@@ -63,14 +120,19 @@ Referência:
       utilizando o método para buscar elemento HTML pelo ID
       e atribuindo a seu valor uma String vazia
 
-	        function limpaArea(a){
-		        buscaId(a).value='';
-	        }
-
+        function limpaArea(a){
+	        buscaId(a).value='';
+        }
 
     - o seu uso seria assim no código para limpar o campo HTML "saida":
 
-            limpaArea('saida');
+        limpaArea('saida');
+
+
+1.3.1.  limpaAreaem versão arrow-function
+=========================================
+
+        let limpaArea = a => buscaId(a).value='';
 
 
 
@@ -117,6 +179,32 @@ Referência:
 	    }
 
 
+2.1.1.  Codificar em versão arrow-function
+==========================================
+
+    - por não ter parâmentro é necessário o uso dos () vazio;
+    - por ter multiplas instruções é necessário o uso das {}.
+
+        let codificar = () => {
+            var doc = buscaId('entrada').value;
+
+            doc = doc.normalize('NFD')
+                     .replace(/[^a-zA-Z\s]/g, "")
+                     .toLowerCase();
+
+		    doc = doc.replace(/e/g, 'enter');
+		    doc = doc.replace(/i/g, 'imes');
+		    doc = doc.replace(/a/g, 'ai');
+		    doc = doc.replace(/o/g, 'ober');
+		    doc = doc.replace(/u/g, 'ufat');
+
+		    buscaId('saida').value = doc;
+		    limpaArea('entrada');
+
+        }
+
+
+
 2.2.    Decodificar
 ===================
 
@@ -137,6 +225,25 @@ Referência:
 		limpaArea('entrada');
 	}
 
+2.2.1.  Decodificar em versão arrow-function
+============================================
+
+	    let decodificar = () => {
+
+		    var doc = buscaId('entrada').value;
+
+    //	só nesta ordem codifica e decodifica corretamente
+		    doc = doc.replace(/enter/g, 'e');
+		    doc = doc.replace(/imes/g, 'i');
+		    doc = doc.replace(/ai/g, 'a');
+		    doc = doc.replace(/ober/g, 'o');
+		    doc = doc.replace(/ufat/g, 'u');
+
+		    buscaId('saida').value = doc;
+		    limpaArea('entrada');
+	    }
+
+
 
 
 2.3.    Copiar
@@ -150,18 +257,63 @@ Referência:
             copiaMemo(cop);
             limpaArea('saida');
         }
-      
+
+
+2.3.1   Copiar em versão arrow-function
+=======================================
+
+        let copiar = () => 
+            var cop = buscaId('saida'),
+            copiaMemo(cop),
+            limpaArea('saida');
+        
+
 
 2.4.    Colar
 =============
 
+        const btnColar = buscaId('colar');
+        const textSaida = buscaId('saida');
 
+        btnColar.addEventListener('click', async (e) => {
+	        const colar = await navigator.clipboard.readText();
+		    textSaida.value = colar;
+		    alert('Clique em OK para colar a mensagem.');
+	    });
+            
+
+            copiaMemo(cola);
+            limpaArea('saida');
+        }
+
+
+    - Receber elementos do HTML e armazenar em constantes:
+
+	    const btnColar = buscaId('.colar');
+	    const textSaida = buscaId('.saida');
+
+    - Aguardar click do usuário - botão colar:
+
+	    btnColar.addEventListener('click', async (e) => {
+		    const colar = await navigator.clipboard.readText();
+		    textSaida.value = colar;
+		    alert('Clique em OK! e a mensagem copiada será colada na área indicada.');
+	    });
 
 
 2.5.    Refresh
 ===============
 
+    - chamar o elemento HTML e armazenar em uma constante:
 
+    	const btnRefresh = buscaId('refresh');
+
+    - chamar constante e adicionar evento
+      com função anônima para recarregar a página:
+
+	    btnRefresh.addEventListener('click', () => {
+		    location.reload(true);
+	    } );
 
 
 

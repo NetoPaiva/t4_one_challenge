@@ -1,0 +1,309 @@
+Funções de callback em JavaScript –  o que são e como usá-las
+
+Referência:
+
+    Blog FreeCodeCamp
+
+        Vídeo no Youtube
+        https://youtu.be/qtfi4-8dj9c
+
+        Artigo publicado em 7 de fevereiro de 2022
+        https://www.freecodecamp.org/portuguese/news/funcoes-de-callback-em-javascript-o-que-sao-e-como-usa-las/
+
+
+- Funções
+
+    - São objetos na linguagem JavaScript;
+    - Podem receber outros objetos como parâmetros e como instruções;
+    - Portanto, podem ser declaradas como parâmetros e instruções de uma função.
+
+
+        function print(callback) {  
+            callback();
+        }
+
+        - função "print" recebe a função "callback" como parâmetro
+        - função "print" chama a função "callback" dentro do bloco de instruções
+
+
+- Função callback
+
+    - é a função que é declarada como
+        - parâmetro de outra função
+        - ou como um evento JavaScript
+
+
+- Finalidade das funções callback
+
+    - Programação assíncrona
+        - altera a oredem de execução do código conforme a necessidade.
+    - JavaScript executa código na sequência em que foi escrito, de cima para baixo
+    - certos casos precisam alterar a ordem e executar o código de modo não sequencial
+    - executar apenas depois de determinado acontecimento.
+    - funções callback garantem a execução logo após conclução da tarefa
+    - evita erros no código
+
+- Sintaxe das funções callback
+
+    - passada como "parâmetro" a outra função
+    - e chamada em seguida após a conclusão de certa tarefa
+
+    - exemplo - registrar mensagem no console com atraso de tempo
+
+        const mensagem = function() {
+            console.log('Mesagem aparece após 3 sesungos');
+        }
+
+        setTimeout(mensagem, 3000);
+
+    - neste exemplo
+        - o método setTimeout
+            - chama a função "mensagem"
+            - aguarda 3 segundos
+            - e só depois realiza a instrução da função
+        - a função mensagem é do tipo callback.
+        - o método setTimeout realiza dois tipos de ação após determinado tempo
+            - chama uma função
+            - avalia expressão
+
+
+Função callback anônima
+
+    - A função que é definida dentro de outra função
+    - Não precisa ser declara anteriormente e, depois, ser chamada dentro de outra função
+    - Deixando a função de callback sem nome, apenas com a palavra-chave "function".
+
+        - no exemplo da mensagem no consloe após 3 segundos:
+
+            setTimeout(function() {
+                console.log('Mesagem aparece após 3 sesungos');
+            }, 3000);
+
+
+Função callback com sintaxe arrow
+
+    - Simplifica ainda a exepressão das callback
+    - Omite a declaração da palavra-chave "function" e do nome da função
+    - Mantém a declaração do parâmetro ()
+    - Acrescenta o símbolo da arrow function "=>"
+    - Mantém as {} por ter mais de uma instrução.
+
+        - no mesmo exemplo da mensagem após 3 segundos:
+
+            setTimeout( () => {
+                console.log('Mesagem aparece após 3 sesungos');
+            }, 3000);
+
+
+Função callback para declarações de evento
+
+    - Realiza uma função após algum tipo de envento.
+
+        - exemplo:
+            - mensage aparece no console após clique do usuário
+
+
+            document.queryselector('#callback-btn')
+                    .addEventListener('click', function() {
+                        console.log('Usuário clicou mouse');
+            });
+
+
+        - neste exemplo:
+            - método seleciona elemento HTML pelo ID "#callback-btn"
+            - vinculado com o método de detectar o evento do usuário "click"
+            - detector recebe dois parâmetros
+                - o tipo de evento que deve detectar "click"
+                - uma função callback que exibe mensagem após o evento
+
+
+Função callback para declarar evento com sintaxe arrow
+
+            document.queryselector('#callback-btn')
+                .addEventListener('click', () => console.log('Usuário clicou mouse') );
+
+
+
+
+========|>>  Artigos relacionados
+
+             PROMISES
+
+Referência:
+    https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/
+
+    - Vídeo
+    https://youtu.be/OXpZfyVXeI8
+
+
+Visão geral sobre Promises
+
+    - maneiras para lidar com operações assíncronas
+        - Resolove  (resolver) 
+        - Rejec     (rejeitar)
+        - Chaining  (encadear)
+
+    - é uma garantia de realizar algo futuro
+    - tem 2 resultados: promessa resolvida?
+        - sim
+        - não
+
+    - é um objeto que possue e estados:
+        - pending   (pendente)
+            - estado inicial
+            - antes de promessa bem-sucedida
+        - resolved  (resolvido)
+            - estado final
+            - promessaconcluída
+        - rejected  (rejeitado)
+            - estado final
+            - promessa falhada
+
+
+
+        Representação do processo de Promesas
+
+                          .then()
+                     ---> Resolvido >---
+                     |                 |
+        Pendente >---|                 |---> Pendente
+        promisse     |                 |     promisse
+                     ---> Rejeitado >---
+                          .catch()
+
+
+
+    - Exemplo de promessa
+        - solitação ao servidor
+        - pendente até receber os dados
+        - dados recebidos > promessa resolvida com sucesso
+        - não recebidos   > pomessa em estado rejeitado
+
+- Método de encadeamento (chaining)
+    - várias solicitações
+    - após resolver com sucesso ou não a primeira solicitação
+    - inicia novos processos para as demais solicitações
+
+- Diferença entre callback e promisses
+
+    - Callback é anexado a uma promissa
+    - Callback pode ser usada com Promises, mas de maneira diferente, com o encadeamento
+
+    - Callback e Promises
+        - Calback
+            - para operações assíncronas mais simples
+        - Promises
+            - em certos casos, promessa pode ser melhor opção
+            - várias operações assíncronas
+            - anexa callbacks ao invés de passálos
+
+    - exemplo de operações assíncronas mais complexas apenas com callbacks:
+
+            firstRequest(function(response) {  
+                secondRequest(response, function(nextResponse) {    
+                    thirdRequest(nextResponse, function(finalResponse) {     
+                        console.log('Final response: ' + finalResponse);    
+                    }, failureCallback);  
+                }, failureCallback);
+            }, failureCallback);
+
+    - exemplo com Promises, vários callbacks encadeados:
+
+            firstRequest()
+              .then(function(response) {
+                return secondRequest(response);
+            }).then(function(nextResponse) {  
+                return thirdRequest(nextResponse);
+            }).then(function(finalResponse) {  
+                console.log('Final response: ' + finalResponse);
+            }).catch(failureCallback);
+
+
+
+- Sintaxe e construção de uma Promises
+
+
+    1.  Construtor para criar um objeto Promise
+
+            const myPromise = new Promise();
+
+
+    2.  Parâmetros para sucesso e falha
+
+            const myPromise = new Promise((resolve, reject) => { 
+                ...
+            });
+
+
+    3.  Condição - sucesso ou rejeitada
+
+            const myPromise = new Promise((resolve, reject) => {  
+                let condition;  
+                
+                if(condition is met) {    
+                    resolve('Promise is resolved successfully.');  
+                } else {    
+                    reject('Promise is rejected');  
+                }
+            });
+
+
+- Uso da Promise
+
+    - Promises resolvidas
+        - método "then" chamado após resolver promessa
+
+            myPromise.then();
+
+        - definir o que fazer com a solução
+
+            myPromise.then((message) => {  
+                console.log(message);
+            });
+
+    - Promises rejeitadas
+        - método "catch" chamado após prmessa ser rejeitada
+
+            myPromise.then((message) => { 
+                console.log(message);
+            }).catch((message) => { 
+                console.log(message);
+            });
+
+
+    - código completo:
+
+            const myPromise = new Promise((resolve, reject) => {  
+                let condition;  
+                
+                if(condition is met) {    
+                    resolve('Promise is resolved successfully.');  
+                } else {    
+                    reject('Promise is rejected');  
+                }
+            });
+
+            myPromise.then((message) => { 
+                console.log(message);
+            }).catch((message) => { 
+                console.log(message);
+            });
+
+
+--- fim.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

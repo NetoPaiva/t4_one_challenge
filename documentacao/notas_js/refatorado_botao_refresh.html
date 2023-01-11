@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Neto | refatorado_Refresh</title>
+    <link rel="icon" type="image/png" href="refatorados/icon_netopaiva.png">
+</head>
+
+<body>
+
+	<!-- input -->
+	<textarea id="texto" placeholder="digite seu texto aqui" cols=50 rows=5></textarea>
+    <br>
+    <br>
+	<!-- Botão refresh -->
+	<button id="refresh">Clique para recarregar a página!</button>
+
+
+    <script>
+
+    /*  código refatorado
+        ================= */
+
+    //  funções auxiliares que já estão sendo utilizadas
+    //  no projeto Decodificar, Challenge t4 - ONE/Alura
+
+        let buscaId = x => document.getElementById(x);
+        let captaEvento = (x,y,z) => x.addEventListener(y,z);
+        let recarregar = () => location.reload(true);
+
+    //	chamar o botão e armazenar em uma constante
+
+        const btnRefresh = buscaId('refresh');
+
+    /*	chamar constante e adicionar evento
+        com função anônima para recarregar a página */
+
+        captaEvento(btnRefresh, 'click', recarregar);
+
+
+        /*-------------------------------------------------------
+        |                                                       |
+        |   código original                                     |
+        |   ===============                                     |
+        |                                                       |
+        |   //chamar o botão e armazenar em uma constante       |
+        |                                                       |
+        |	    const btn = document.querySelector('#refresh')  |
+        |                                                       |
+        |                                                       |
+        |	//chamar constante e adicionar evento               |
+        |   //com função anônima para recarregar a página       |
+        |                                                       |
+        |	    btn.addEventListener('click', () => {           |
+        |           location.reload(true);} );                  |
+        |                                                       |
+        -------------------------------------------------------*/
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+Transformar a declaração normal do método addEventListener()
+em uma estrutura arrow function para reaproveitar funções auxiliares
+já utilizadas no projeto Decodificar do Challenge ONE/Alura.
+
+
+Referências:
+
+W3Schools - JavaScript assíncrono
+    https://www.w3schools.com/js/js_async.asp
+
+Blog
+	https://blog.matheuscastiglioni.com.br/definindo-funcoes-em-javascript/
+
+
+Código original completo
+
+	W3Schools - element addEventListener()
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
+
+
+/*  =======================================================
+	- Transformar método addEventListener em arrow function
+	======================================================= */
+
+
+Estrutura JS original
+---------------------
+
+    const element = document.getElementById("myBtn");
+	    element.addEventListener("click", myFunction);
+	    
+    function myFunction() {
+	    document.getElementById("demo").innerHTML = "Hello World";
+    }
+
+
+Estrutura refatorada com arrows function
+----------------------------------------
+
+    let buscaId = x => document.getElementById(x);
+    let captaEvento = (x,y,z) => x.addEventListener(y,z);
+    let dizerOla = () => buscaId("demo").innerHTML = "Hello World";
+
+    const element = buscaId("myBtn");
+    captaEvento(element, "click", dizerOla);
+
+
+
+    ============================================
+        Pesquisa Java Assíncrono - W3Schoos
+        Estrutura do método addEventListener
+    ============================================ 
+	
+	O método anexa um manipulador de eventos a um elemento HTML
+	
+		- sintaxe
+			elemento.método(evento, função, useCapture);
+
+	1. declarar o ememento HTML;
+	2. adicionar o método;
+	3. declarar parâmentros do método:
+		event - obrigatóio (não pode usar o prefixo "on")
+			lista completa de eventos
+			https://www.w3schools.com/jsref/dom_obj_event.asp
+		function - obrigatório
+		useCapture - opcional (true/false)
+			- false é o default - executado na fase construção
+			- true - executado na fase de captura;
+	4. não há "return";
+	5. pode adicionar diversos eventos ao mesmo elemento;
+	6. usar função anônima para passar valores de parâmentros;
+	7. é um recurso DOM nível 2, suportado pela maioria dos navegadores.
+	
+
+	Exemplos
+	
+	1. capturar click para aparecer mensagem na página:
+
+		element.addEventListener('click', helloWorld)
+		
+		function helloWorld(){
+			document.getElementById("elemento-html").innerHTML = "Hello World!";
+		}
+		
+	2. mesmo objetivo com código mais compacto
+		
+		element.addEventListener('click', function(){
+			document.getElementById('elemento-html').innerHTML = "Hello World";
+		});
+		
+	3. mesmo objetivo com arrow function
+		
+		element.addEventListener('click', () => {
+			document.getElementById('elemento-html').innerHTML = "Hello World";
+		});
+
+
+    ===============================================
+	Transformar o método addEventListener em função
+    ===============================================
+		
+    - função normal
+
+		function addListnr (x, y, z){
+			x.addEventListener(y, z);
+		}
+
+    - Transformar em arrow function onde:
+
+		    uso seria: nome('elemento', evento, função);
+				
+			x = elemento HTML a ser capturado
+			y = evento do usuário
+			z = função a ser realizada
+		
+		let captaEvento = (x,y,z) => x.addEventListener(y,z);
+
+----------------------------------------------------------------------*/
+
+
+Código original completo do exemplo na W3Schools
+
+	W3Schools - element addEventListener()
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>The Element Object</h1>
+    <h2>The addEventListener() Method</h2>
+
+    <p>Execute a function when a user clicks on a button:</p>
+    <button id="myBtn">Try it</button>
+    <p id="demo">
+
+    <script>
+
+        const element = document.getElementById("myBtn");
+        element.addEventListener("click", myFunction);
+
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Hello World";
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+Estrutura JS original
+---------------------
+
+    <script>
+	    const element = document.getElementById("myBtn");
+		    element.addEventListener("click", myFunction);
+		    
+	    function myFunction() {
+		    document.getElementById("demo").innerHTML = "Hello World";
+	    }
+    </script>
+
+
+Estrutura refatorada com arrows function
+----------------------------------------
+
+    <script>
+        let buscaId = x => document.getElementById(x);
+        let captaEvento = (x,y,z) => x.addEventListener(y,z);
+        let dizerOla = () => buscaId("demo").innerHTML = "Hello World";
+
+        const element = buscaId("myBtn");
+        captaEvento(element, "click", dizerOla);
+    </script>
+
+
+obs.: ainda falta solucionar "innerHTML" com "async-awiat"
+para refatorar este método também.

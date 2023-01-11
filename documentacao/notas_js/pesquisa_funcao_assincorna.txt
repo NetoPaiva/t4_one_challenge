@@ -1,0 +1,156 @@
+Pesquisa Funções Assíncronas
+
+Referências
+
+- MDN
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/async_function
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Iterators_and_Generators
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Generator
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
+
+- Alura
+https://www.alura.com.br/artigos/async-await-no-javascript-o-que-e-e-quando-usar
+
+
+Programação assíncrona
+	- executa tarefas em segundo plano
+	- sem controle direto
+	- sistema aguarda chegada dos dados antes de usar o resultado
+	- separa o código em duas partes
+		- o que deve rodar antes
+		- o que deve rodar depois de algum acontecimento
+			- como o clique em um botão;
+			- tecla acionada;
+			- movimento do mouse...
+	- utiliza promessas
+		- aguarda um retorno mas continua rodando o programa
+		- se o retorno for positivo, faz isso, fez negativo, aquilo
+
+Uso das palavras-chave async/await
+	- sintaxe que simplifica programação assíncrona
+	- facilita fluxo de escrita/leitura do código
+		- código roda de forma assíncrona
+		- lido e estruturado de forma síncrona
+		- baseado em Promises, que ficam ocultas.
+
+	- async define o tipo de função assíncrona
+		- valor de retorno será uma Promises
+			- promessa resolvida, retorna valor
+			- não resolvida, retorna erro
+				- pode ser solucionado com try/catch
+
+
+	- await antes de expressão que retorna promessa
+		- JS aguarda até promessa finalizar
+			- com sucesso (fulfilled) o valor obtido é retornado
+			- rejeitada (rejected) retorna erro lançado pela exceção
+		- só pode usar await em funções declaradas com {}
+
+		async function getUser(userId) {
+		 let response = await fetch(`https://api.com/api/user/${userId}`);
+		 let userData = await response.json();
+		 return userData.name; // nas linhas de return não é necessário usar await
+		}
+
+
+- Sintaxe
+
+	async function nome(parâmetro, parâmetro...){
+		instruções...
+	}
+
+	Elementos da declaração da função
+
+	- nome da função com o prefixo "async"
+	- parâmetros a serem passados à função
+	- bloco de instruções com o uso das {}
+
+- Descrição
+
+	- este tipo de função
+		- compatível com todos os navegadores;
+		- quando chamada, retorna uma promessa (Promise);
+		- quando retorna um valor,resolve a promessa com valor retornado;
+		- quando não retorna valor, promessa é rejeitada.
+		- pode conter expressão "await"
+			- passa execução e espera resolução da promessa;
+			- depois retoma execução da função;
+			- retornando valor resolvido.
+
+	- o objetivo é simplificar o uso síncrono das promessas, executando procedimentos em grupos.
+	- Promises são similares a callbacks
+	- async/await são similares à junção de generators com Promises
+		- objeto generator
+			- é um tipo especial de função
+			- algoritmo iterativo em forma de função simples
+			- função generator contém
+				- uma ou mais expressões yield
+					- (palavra-chave para pausar e resumir a generator function)
+				- ou usa sintaxe function
+
+- Exemplos
+
+		function resolverDepoisDe2Segundos(x) {
+		  return new Promise(resolve => {
+			setTimeout(() => {
+			  resolve(x);
+			}, 2000);
+		  });
+		}
+
+		async function adicionar1(x) {
+		  var a = resolverDepoisDe2Segundos(20);
+		  var b = resolverDepoisDe2Segundos(30);
+		  return x + await a + await b;
+		}
+
+		adicionar1(10).then(v => {
+		  console.log(v);  // exibe 60 depois de 2 segundos.
+		});
+
+		async function adicionar2(x) {
+		  var a = await resolverDepoisDe2Segundos(20);
+		  var b = await resolverDepoisDe2Segundos(30);
+		  return x + a + b;
+		}
+
+		adicionar2(10).then(v => {
+		  console.log(v);  // exibe 60 depois de 4 segundos.
+		});
+
+
+- Reescrevendo cadeia Promise com função async_function
+
+	- API que retorna uma Promises
+	- resulta em cadeia de Promises
+	- separa função em diversas partes.
+
+	- Por exemplo, este código:
+
+		function pegarDadosProcessados(url) {
+		  return baixarDados(url) // retorna uma Promise
+			.catch(e => {
+			  return baixarDadosReservas(url) // retorna uma Promise
+			})
+			.then(v => {
+			  return processarDadosNoWorker(v); // retorna uma Promise
+			});
+		}
+
+	- Pode ser reescrito com única função async:
+
+		async function pegarDadosProcessados(url) {
+		  let v;
+		  try {
+			v = await baixarDados(url);
+		  } catch(e) {
+			v = await baixarDadosReservas(url);
+		  }
+		  return processarDadosNoWorker(v);
+		}
+
+	- neste exemplo, não tem a instrução "await" no return
+	  pois o valor retornado deste tipo de função
+	  sempre passará por um "promise.resolve"
+		- método "promisse.resolve"
+			- retorna objeto Promise resolvido com valor passado.

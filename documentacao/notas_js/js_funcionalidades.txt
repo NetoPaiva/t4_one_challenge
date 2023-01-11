@@ -9,12 +9,12 @@ Anotações - funcionalidades JavaScript para projeto challenge-t4
 1. Remover acentos/sinais ortográficos
 ======================================
 
-Criar função "normalize()" com expressões regulares e comando replace
+Utilizar método "normalize()" com expressões regulares e comando replace
 
 
 	.normalize('NFD').replace(/[\u0300-\u036f]/g, ' ');
 	
-- função "normalize"
+- método "normalize"
 - parâmetro "NFD" (Formato de normalização canônico de decomposição)
 	- irá decompor a letra acentuada em caracteres separados ( letra + acento)
 	- salvando dentro de um array

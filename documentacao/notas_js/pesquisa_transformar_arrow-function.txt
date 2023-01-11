@@ -1,0 +1,273 @@
+Transformar uma função em Arrow Function
+
+
+[JS2 - tópico 2] Função Seta (arrow function) em JavaScript
+vídeo - https://youtu.be/_kCCmAFa2Zk
+Canal Youtube - Flavio Coutinho - https://www.youtube.com/@Fegemo
+
+
+            - tipos de função em JS
+            -----------------------
+
+                Função normal
+                Função anônima
+                Função Seta
+                Função Seta simplificada
+
+
+
+- Função normal
+---------------
+
+        function nomeFuncao (parâmetros){
+            instruções
+        }
+
+    - Estrutura da função normal:
+
+        - a palavra-chave "function"
+        - o nome da função
+        - () para informar a lsita de parâmentros da função
+        - {} o corpo para informar as instruções da função
+
+
+- Função anônima
+----------------
+
+        const nomConstante = function (parâmetros){
+            instruções
+        }
+
+    - Estrutura da função anônima
+
+        - cria variável/constante
+        - atribue à variável uma função anônima
+
+
+- Função Seta (arrow)
+---------------------
+
+        const nomeConstante = (parâmetros) => {
+            instruções
+        }
+
+    - Estrutura da função seta
+
+        - sintaxe mais nova / sucinta para criar funções anônimas
+        - cria variável/constante
+        - omite a palavra-chave "function"
+        - coloca uma seta entre a lista de parâmetros e o corpo da função
+        - se houver apenas um parâmetro pode omitir os ()
+        - mas mantém () se houver mais de um ou nenhum parãmentro
+        - return implícito, poderia não ser declarado na maioria dos casos
+        - mantém o valor do ponteiro "this" (?)
+
+
+- Como transformar função simples:
+----------------------------------
+
+    // função normal que retorna a String "Ciao":
+
+            function ciao(){
+                return 'Ciao';
+            }
+
+    // transformada em função anônima:
+        - transforma o nome da função em variável do tipo "let"
+        - atribuindo como valor a própria função (mantém palavra-chave)
+
+            let ciao = function(){
+                return 'Ciao';
+            }
+
+    // transformar em função seta:
+        - omite  a palavra-chave "function"
+        - adiciona a seta entre a lista de parâmetros e corpo da função
+
+            let ciao = () => {
+                return 'Ciao';
+            }
+
+    // ou poderia omitir o termo "return"
+
+            let ciao = () => {
+                'Ciao';
+            }
+
+   // e por ter apenas uma instrução, retirar as chaves {}
+
+            let ciao = () => 'Ciao';
+
+
+- Como transformar uma função com dois parâmetros:
+--------------------------------------------------
+
+    // função normal com 2 parâmetros que retorna uma String:
+         
+            function oi(prim, ult) {
+              return 'Oi ' + prim + ' ' + ult;
+            }
+
+    // para anônima
+
+            let oi = function (prim, ult) {
+              return 'Oi ' + prim + ' ' + ult;
+            }
+
+    // para seta completa
+
+            let oi = (prim, ult) => {
+              return 'Oi ' + prim + ' ' + ult;
+            }
+
+    // para seta simplificada por ter apenas uma instrução
+
+            let oi = (prim, ult) => 'Oi ' + prim + ' ' + ult;
+
+
+- Como transformar uma função com um parâmetro:
+-----------------------------------------------
+
+        // função normal com um parâmetro
+
+            function hi(name) {
+              return 'Hi ' + name;
+            }
+
+        // em anônima
+
+            let hi = function (name) {
+              return 'Hi ' + name;
+            }
+
+        // em seta - por ter apenas um parâmetro, pode retirar os ()
+
+            let hi = name => 'Hi ' + name;
+
+
+
+
+
+
+        1.1.1.  Transformar em arrow-function
+        -------------------------------------
+
+            - função normal:
+
+                function buscaId(b){
+                    return document.getElementById(b);
+                }
+
+            - transformada em arrow
+
+                let buscaId = b => document.getElementById(b);
+
+
+
+
+
+
+
+- Como transformar função fatorial - com 1 parâmentro e algumas instruções
+--------------------------------------------------------------------------
+
+        // função normal com um parâmetro
+
+            function fatorial(n) {
+                let resultado = 1;
+                while (n > 1) {
+                    resultado *= n;
+                    n--;
+                }
+                return resultado;  
+            }
+
+        // em anônima
+
+            let fatorial = function(n) {
+                let resultado = 1;
+                while (n > 1) {
+                    resultado *= n;
+                    n--;
+                }
+                return resultado;  
+            }
+
+
+        // em seta - tira () e mantém {}
+
+            let fatorial = n => {
+                let resultado = 1;
+                while (n > 1) {
+                    resultado *= n;
+                    n--;
+                }
+                return resultado;  
+            }
+
+
+- Transformar função com vetores em função seta
+-----------------------------------------------
+
+    - 3 tipos de array
+        - String    let usuarios = ['Joel', 'Fani', 'Fúlvio'];
+        - Objetos   let alunos = [{ matricula: '...' }];
+        - Números   let numeros = [1, 4, 2, 5];
+
+
+- Exemplo 1 - Função para identificar nomes com determinada letra inicial
+-------------------------------------------------------------------------
+
+        - utiliza método ".filter";
+        - passa para o método uma função que retornara true/false
+          indicando qual elemento deve passar ou reter no filtro;
+        - a cada iteração recebe como parâmetro o elemento atual;
+        - se o retorno for true, elemento é incluido no vetor de saída
+
+        - Ao vetor "usuarios" vinculado com método ".filter"
+          é passada uma função que recebe um nome como parâmentro
+          e se este nome começa com determinada inicial maiúscula,
+          verificada pelo método ".startsWith()", retornará true,
+          armazenando nomes no vetor de saída, ou retornará false,
+          ignorando este nome.
+
+
+    - Função normal - (acho que seria assim)
+    ----------------------------------------
+
+            function inicial(x){
+                usuarios.filter(nome);
+                return nome.startsWith(x)
+            }
+
+            inicial('F');
+
+
+    - Função anônima
+    ----------------
+
+            usuarios.filter(function(nome) {
+                return nome.startsWith('F');
+            });
+
+
+    - Função seta
+    -------------
+
+            usuarios.filter(nome => nome.startsWith('F'));
+
+
+    - cada elemento da expressão
+
+        usuarios.filter();
+            - array "usuarios" e o método "filter"
+
+        nome => nome.startsWith('F')
+            - método ".filter" recebe como parêmetro, dentro dos (),
+              a função seta completa que tem apenas um parâmetro "nome",
+              por isso a função não precisa dos ().
+
+            
+
+
+--- fim

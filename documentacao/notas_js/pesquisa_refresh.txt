@@ -1,0 +1,101 @@
+Referências:
+
+W3Schools - JavaScript assíncrono
+    https://www.w3schools.com/js/js_async.asp
+
+Blog
+	https://blog.matheuscastiglioni.com.br/definindo-funcoes-em-javascript/
+
+
+        ----------------------------------------------------------
+                Solução para transformar método reload
+                em funções do tipo normal e do tipo arrow
+        ----------------------------------------------------------
+
+        <script>
+
+        /*  código refatorado
+            ================= */
+
+        //  funções auxiliares que já estão sendo utilizadas
+        //  no projeto Decodificar, Challenge t4 - ONE/Alura
+
+            let buscaId = x => document.getElementById(x);
+            let captaEvento = (x,y,z) => x.addEventListener(y,z);
+            let recarregar = () => location.reload(true);
+
+        //	chamar o botão e armazenar em uma constante
+
+            const btnRefresh = buscaId('refresh');
+
+        /*	chamar constante e adicionar evento
+            com função anônima para recarregar a página */
+
+            captaEvento(btnRefresh, 'click', recarregar);
+
+
+            /*-------------------------------------------------------
+            |                                                       |
+            |   código original                                     |
+            |   ===============                                     |
+            |                                                       |
+            |   //chamar o botão e armazenar em uma constante       |
+            |                                                       |
+            |	    const btn = document.querySelector('#refresh')  |
+            |                                                       |
+            |                                                       |
+            |	//chamar constante e adicionar evento               |
+            |   //com função anônima para recarregar a página       |
+            |                                                       |
+            |	    btn.addEventListener('click', () => {           |
+            |           location.reload(true);} );                  |
+            |                                                       |
+            -------------------------------------------------------*/
+
+        </script>
+
+        -------------------------------------------------------------
+
+
+
+/*      ==========================================================
+			Método reload - atualizar a página sem usar o cache
+		========================================================== */
+
+/*	    - método reload normal
+			1.  chamar o botão e armazenar em uma constante:
+			2.  chamar constante e adicionar evento
+				com função anônima para recarregar a página */
+				
+		    const btnRefresh = document.querySelector('#refresh');
+		    btnRefresh.addEventListener('click', () => {
+			    location.reload(true);
+		    } );
+
+
+//	- Transformar método reload em função normal e do tipo arrow
+//	------------------------------------------------------------
+
+//	    - função normal
+
+			function recarregar(x){
+				return location.reload(true);
+			}
+
+//	    - função arrow
+
+			let recarregar = x => location.reload(true);
+
+//	    - chamar o método dentro da constante e do evento:
+
+			btnRefresh.addEventListener('click', recarregar);
+
+	
+
+//  fim
+//	----------------------------------------------------------------------- */
+
+
+
+
+

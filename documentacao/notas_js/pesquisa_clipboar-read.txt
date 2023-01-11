@@ -1,0 +1,107 @@
+    ==============================================
+    Anotações sobre navigator.clipboard.readText()
+    ==============================================
+
+Referência
+
+W3Schools
+https://www.w3schools.com/js/js_window_navigator.asp
+https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+
+MDN
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText
+https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarge
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#browser_compatibility
+https://w3c.github.io/clipboard-apis/#writing-to-clipboard
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/clipboard
+
+
+    navigator
+    ---------
+
+    - é um objeto que contém informações sobre ações do usuário no navegador
+    - utiliza diversar propriedades especificas a cada tipo de informação
+        - navigator.language
+            - saber o idioma configurado no navegador
+        - navigator.plataform
+            - saber a plataforma do navegador (sistema operacional)
+        - naveigator.userAgent
+            - saber qual é o navegador
+        - navigator.clipboard
+            - acessar a área de transferência
+
+
+    .clipboard
+    ----------
+
+    - API da área de transferência (clipboard / memória);
+    - interface para acessar conteúdo da área de transferência;
+        - ler (read)
+        - gravar (write)
+    - necessita autoriazação do usuário (APIs de permissões);
+    - utilizada para 
+        - recortar (cut)
+        - copiar (copy)
+        - colar (paste)
+
+    - navigator.clipboard
+        - propriedade global de acesso à área de transferência
+
+    - permissões
+        - nem todos os navegadores aceitam este recurso
+        - verificar as permissões de API
+
+    - características da interface .clipboard
+        - utiliza métodos que operam de forma assíncrona
+        - retorna "promisse" após concluir acesso à área de transferência
+        - promessa é rejeitada se acesso for negado
+        - baseado na EventTarget, uma interface DOM
+            - implementada por objetos que podem receber eventos DOM
+            - precisa capturar esses eventos
+                - addEventListener é um destes eventos
+
+    - métodos
+        - read()
+            - paste - lê conteúdo da área de transferência
+            - solicita dados em geral (pode ser texto ou imagem)
+            - retorna promessa com o conteúdo da área de transferência
+        - readText()
+            - paste - colar texto
+            - solitica dados do tipo texto (String)
+            - assim que estiver disponível, retorna promessa com uma String
+        - write()
+            - copy - escreve conteúdo na área de transferência
+            - grava dados na área de transferência (texto ou imagem)
+            - operação assíncrona, concluída ao resolver a promessa
+        - writeText()
+            - copy - copiar texto
+            - grava texto na área de transferência (String)
+            - após String ser copiada, a promessa está resolvida
+
+    - disponibilidade da área de transferência
+        - API recente
+        - imlpementação pode estar incompleta em alguns navegadores
+        - por questões de segurança (acesso aos dados da memória)
+        - recoendação é consultar a compatibilidade dos navegadores
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

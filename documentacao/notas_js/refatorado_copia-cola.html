@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neto Paiva">
+    <meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
+    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
+    <title>Neto | _refatorado copy-paste-reload</title>
+	<link rel="icon" type="image/png" href="refatorados/icon_netopaiva.png">
+	<style>
+		body {
+			background-color: #456077;
+		}
+		textarea{
+			background-color: #738b9e;
+			border-radius: 5px;
+		}
+		button{
+			background-color: #738b9e;
+			border-radius: 5px;
+			border: solid 1px #cccccc;
+            padding: 10px;
+            margin: 10px 26px 10px 0px;
+		}
+        #colar{
+            margin-right: 0;
+        }
+	</style>
+
+</head>
+
+<body>
+
+	<label name="area-texto">
+		<!-- Input do texto -->
+		<p>Área de texto:</p>
+		<textarea name="texto" id="texto" rows="3" cols="70"
+            placeholder="Digite seu texto e clique em copiar..."></textarea>
+		<br>
+		<!-- botão copiar -->
+		<button type="input" id="copiar">Copiar</button>
+
+		<!-- botão colar -->
+		<button type="input" id="colar">Colar</button>
+		<en>--> Infelizmente, ação "colar" não funciona no Firefox! [; (</en>
+	</label>
+	<br>
+	<label name="refresh">
+		<!-- Botão refresh -->
+		<button id="recarregar">Recarregar a página!</button>
+	</label>
+</body>
+
+</html>
+
+
+<script>
+
+//  código refatorado
+//  =================
+
+//  funções auxiliares utilizadas no projeto Decodificar
+
+//  buscar elemento HTML pelo ID:
+		let buscaId = b => document.getElementById(b);
+//  limpar valor do ID
+		let limpaArea = (a,b) => buscaId(a).value = b;
+//	copiar valor do elemento HTML
+		let copiaMemo = m => navigator.clipboard.writeText(m.value);
+//	colar texto no elemento HTML
+	    let colaMemo = () => navigator.clipboard.readText();
+//	captar evento do usuário
+		let captaEvento = (x,y,z) => x.addEventListener(y,z);
+//  recarregar a página:
+		let recarregar = x => location.reload(true);
+
+//  Receber seletores HTML:
+//		área de texto e os botões copiar, colar e recarregar.
+		const areaTexto = buscaId('texto');
+		const btnCopiar = buscaId('copiar');
+		const btnColar = buscaId('colar');
+		const btnRecarregar = buscaId('recarregar');
+
+//  Aguardar click do usuário - botão copiar
+		captaEvento(btnCopiar, 'click', () => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+//  Aguardar click do usuário - botão colar
+		captaEvento(btnColar, 'click', async () => {
+			const colar = await colaMemo();
+			areaTexto.value = colar;
+		});
+
+//  Aguardar click do usuário - botão refresh
+		captaEvento(btnRecarregar, 'click', recarregar);
+
+</script>

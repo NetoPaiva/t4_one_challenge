@@ -5,7 +5,14 @@
 <head>
 
 	<meta charset="UTF-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neto Paiva">
+    <meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
+    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
 	<title>NetoPaiva | codificador | t4 one</title>
+	<link rel="icon" type="image/png" href="images/icon_netopaiva.png">
+	<link rel='stylesheet' type='text/css' media='screen' href='t4_style.css'>
 
 </head>
 
@@ -13,53 +20,63 @@
 
 	<div id="pagina">
 
-		<header>
-			<img src="images/logo.png" alt="logo Alura - uma letra 'a' minúscula, na cor azul escura">
-			<h1>Decodificador de textos</h1>
+		<header id="cabecalho">
+			<img id="logo-a" src="images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
+			<h1 id="titulo">Codificador de textos</h1>
 		</header>
 
-		<main>
-
-			<section id="direita">
-				<input type="textarea" name="entrada" placeholder="Digite seu texto" />
-				<p>
-					<img src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escuro">
-					| Apenas letras minúsculas e sem acento.
-				</p>
-				<button name="cript">Criptografar</button>
-				<button name="decript">Decriptografar</button>
-			</section>
+		<main id="principal">
 
 			<section id="esquerda">
+				<input id="entrada" type="textarea" name="entrada" placeholder="Digite seu texto..."/>
 
-				<div id="saida">
-					<textarea name="saída" placeholder="Nenhuma mensagem encontrada." wrap ></textarea>
-					<br>
-					<img src="images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante">
-					<br>
-					<p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+				<p>
+					<img id="exclamacao" src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura">
+					<span id="aviso">| Apenas letras minúsculas e sem acento.</span>
+				</p>
 
-					<button name="cript">copiar</button>
-					<button name="decript">colar</button>
-				</div>
+                <div id="botoes-esquerda">
+				    <button id="codifica" name="btn-codifica">Codificar</button>
+				    <button id="decodifica" name="btn-decodifica">Decodificar</button>                    
+                </div>
+			</section>
+
+			<section id="direita">
+
+				<textarea id="saida" name="saida-texto" placeholder="Nenhuma mensagem encontrada." wrap ></textarea>
+				<br>
+				<img id="lupa" src="images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante">
+				<br>
+				<p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+
+                <div id="botoes-direita">
+				    <button id="copiar" name="btn-copiar">copiar</button>
+				    <button id="colar" name="btn-colar">colar</button>
+				    <button id="recarregar" name="btn-recarregar">recarregar</button>
+                </div>
 
 			</section>
 
 		</main>
 
-		<footer>
-
+		<footer id="rodape">
 			<hr>
-			<p>&#169; Desenvolvido por <a href="https://github.com/NetoPaiva" target="_blank">Neto Paiva</a> | DEZ.2022 | <a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">ONE - <img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura"></a></p>
-
+			<p>
+                &#169; Desenvolvido por
+                <a href="https://github.com/NetoPaiva" target="_blank">
+                 Neto Paiva
+                </a>
+                 | JAN.2023 |
+                <a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
+                    <img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura">
+                  | Progrma ONE - Oracle Next Education
+                </a>
+            </p>
 		</footer>
-
 	</div>
-
 </body>
 
+<script src="script_netopaiva.js"></script>
 </html>
 
 
-<script>
-</script>

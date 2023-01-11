@@ -1,0 +1,121 @@
+>>> iframe - página esquematizada do projeto
+
+/----------------------------------------------------------------------------------------\
+|  DIV (pagina) - toda a área da página do projeto                                       |
+|                                                                                        |
+| /--- --------------------------------------------------------------------------------\ |
+| |   HEADER - <img> (logo-a) <h1> título da página                                    | |
+| \---------------------------------------------------- -------------------------------/ |
+|                                                                                        |
+| /------------------------------------------------------ -----------------------------\ |
+| |  MAIN (main) - com duas sections (direita e esquerda)                            | |
+| |                                                                                    | |
+| |  /-------------------------------------\  /-------------------------------------\  | |
+| |  | SECTION (esquerda)                  |  | SECTION (direita)                   |  | |
+| |  |                                     |  |                                     |  | |
+| |  | /--------------------------------\  |  | /---------------------------------\ |  | |
+| |  | | INPUT (entrada) texto          |  |  | | TEXTEAREA (saida) texto         | |  | |
+| |  | \--------------------------------/  |  | |                                 | |  | |
+| |  |                                     |  | |                                 | |  | |
+| |  |                                     |  | |                                 | |  | |
+| |  |                                     |  | |                                 | |  | |
+| |  |                                     |  | |                                 | |  | |
+| |  |                                     |  | \---------------------------------/ |  | |
+| |  |                                     |  |                                     |  | |
+| |  |                                     |  |    <img> lupa.png (lupa)            |  | |
+| |  |                                     |  |    <p> Digite texto                 |  | |
+| |  |  <p>                                |  |                                     |  | |
+| |  |   <img> exclamacao.png (exclamacao  |  | /---------------------------------\ |  | |
+| |  |   <span> texto aviso (aviso)        |  | | DIV (botoes-direita)            | |  | |
+| |  |                                     |  | |                                 | |  | |
+| |  | /---------------------------------\ |  | | /-------------\ /-------------\ | |  | |
+| |  | | DIV (botoes-esquerda)           | |  | | |  BUTTON     | |  BUTTON     | | |  | |
+| |  | |                                 | |  | | |  (copiar)   | |  (colar)    | | |  | |
+| |  | | /-------------\ /-------------\ | |  | | --------------/ \-------------/ | |  | |
+| |  | | | BUTTON      | | BUTTON      | | |  | | /-----------------------------\ | |  | |
+| |  | | | (codifica)  | | (decodifica)| | |  | | |  BUTTON (recarregar)        | | |  | |
+| |  | | --------------/ \-------------/ | |  | | \-----------------------------/ | |  | |
+| |  | |                                 | |  | |                                 | |  | |
+| |  | \---------------------------------/ |  | \---------------------------------/ |  | |
+| |  \-------------------------------------/  \-------------------------------------/  | |
+| |                                                                                    | |
+| \------------------------------------------------------------------------------------/ |
+|                                                                                        |
+| /------------------------------------------------------------------------------------\ |
+| |  FOOTER - Créditos e links institucionais                                          | |
+| \------------------------------------------------------------------------------------/ |
+\----------------------------------------------------------------------------------------/
+
+Elementos HTML essenciais
+=========================
+
+	<!DOCTYPE html>
+
+	<html lang="pt-br">
+	</html>html>
+
+Elementos HTML de metadados
+===========================
+
+	<head>
+
+		<meta charset="UTF-8"/>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Neto Paiva">
+		<meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
+		<meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
+		<title>NetoPaiva | codificador | t4 one</title>
+		<link rel="icon" type="image/png" href="refatorados/icon_netopaiva.png">
+		<link rel="stylesheet" type="text/css" media="screen" href="t4_style.css">
+
+	</head>
+
+
+Elementos HTML da estrutura da página:
+======================================
+
+	<body>
+		<div id="pagina"> - toda a área da página do projeto
+
+			<header id="cabecalho">
+				<img id="logo-a" logo-a.png>
+				<h1 id="titulo">título</h1>h1>
+			</header>
+
+			<main id="principal"> - com duas sections
+				<section id="esquerda">
+					<input id="entrada">texto</input>
+					<p>
+						<img id="exclamacao">
+						<span id="aviso">texto</span>
+					</p>
+					<div id="botoes-esquerda">
+						<button id="codifica">codificar</button>
+						<button id="decodifica">decodificar</button>
+					</div>
+				</section>
+				<section id="direita">
+					<textarea id="saida">texto</textarea>
+					<img id="lupa" lupa.png>
+					<p>digite texto</p>
+					<div id="botoes-direita">
+						<button id="copiar">copiar</button>
+						<button id="colar">colar</button>
+						<button id="recarregar">recarregar</button>
+					</div>
+				</section>
+			</main>
+			<footer id="rodape">
+				<p>
+					<a link meugithub>Desenvolvido por</a>
+					<a link alura/one>
+						<img id="logo-one">
+						<img id="logo_oracle-alura">
+					</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+
+	<script>chamar arquivo script.js</script>

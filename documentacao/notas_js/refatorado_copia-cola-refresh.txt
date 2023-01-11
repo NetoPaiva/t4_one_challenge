@@ -1,0 +1,311 @@
+Soluções para simplificar e reaproveitar trechos do código do projeto Decodificar, transformando declarações recorrentes em funções auxiliares do tipo arrow e chamadas de ações mais sucintas.
+
+
+
+	Refatorar o código das ações:
+		- copiar texto
+		- colar texto
+		- recarregar a página
+
+
+
+>	Funções auxiliares do tipo arrow com as ações recorrentes
+	=========================================================
+
+	- buscar elemento HTML pelo ID:
+		let buscaId = b => document.getElementById(b);
+
+	- limpar valor do ID
+		let limpaArea = (a,b) => buscaId(a).value = b;
+
+	- copiar valor do elemento HTML
+		let copiaMemo = m => navigator.clipboard.writeText(m.value);
+
+	- colar texto no elemento HTML
+		let colaMemo = () => navigator.clipboard.readText();
+
+	- detectar evento do usuário
+		let captaEvento = (x,y,z) => x.addEventListener(y,z);
+
+	- recarregar a página:
+		let recarregar = x => location.reload(true);
+
+	- Receber seletores HTML:
+	  área de texto e os botões copiar, colar e recarregar.
+
+		const areaTexto = buscaId('texto');
+		const btnCopiar = buscaId('copiar');
+		const btnColar = buscaId('colar');
+		const btnRecarregar = buscaId('recarregar');
+
+
+
+>	Refatorar função COPIAR TEXTO
+	=============================
+
+	- Lógica da tarefa:
+		- Buscar o elemento HTML pelo ID do botão copiar,
+		  aguardar clique do usuário no botão copiar
+		  para receber os dados da área de texto
+		  e armazenar valor em uma constante e,
+		  caso queira, emitir alerta de confirmação da ação.
+
+
+	código original
+	===============
+
+		document.getElementById('copiar')
+			.addEventListener('click', function (e) {
+				navigator.clipboard.writeText(areaTexto.value);
+				alert('Texto copiado com sucesso!');
+			});
+
+
+	código refatorado
+	=================
+
+		captaEvento(btnCopiar, 'click', () => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+
+
+	Processo de transformação
+	-------------------------
+
+	1.	Versão original
+
+		document.getElementById('copiar')
+			.addEventListener('click', function (e){
+				navigator.clipboard.writeText(areaTexto.value);
+				alert('Texto copiado com sucesso!');
+			});
+
+
+	1.1.	método para buscar elemento HTML pelo ID;
+	1.2.	método que detecta ação do usuário - clique do mouse;
+	1.3.	arrow function como parâmetro do método de detecção;
+	1.4.	método que copia texto para área de transferência (memória)
+			declarado como instrução da arrow function;
+	1.5.	exibir aviso confirmando cópia do texto,
+			também declarada como instrução da arrow function.
+
+
+	2.	Substituir o método de busca do ID pela constante que recebe o método
+
+		btnCopiar.addEventListener('click', (e) => {
+			navigator.clipboard.writeText(areaTexto.value);
+			alert('Texto copiado com sucesso! ');
+		});
+
+
+	3.	Substituir o método que copia o texto pela função auxiliar
+
+			btnCopiar.addEventListener('click', e => {
+				copiaMemo(areaTexto);
+				alert('Texto copiado com sucesso!');
+				});
+
+
+	4.	Substituir a exibição do aviso de confirmação por função auxiliar
+		que limpa a área de texto e exibe, na própria área de texto,
+		mensagem de confirmação de cópia do texto.
+
+		btnCopiar.addEventListener('click', e => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+
+	5. Substituir a constante que recebe o elemento HTML pela função auxiliar
+
+		buscaId('copiar').addEventListener('click', e => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+
+	6.	Substituir a função auxiliar que recebe o elemento HTML junto com o
+		método que detecta o clique do usuário por outra função auxiliar
+
+		captaEvento(btnCopiar, 'click', e => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+
+	7.	Versão final - ajustar declaração da arrow function
+
+		captaEvento(btnCopiar, 'click', () => {
+			copiaMemo(areaTexto);
+			limpaArea('texto', 'Copiado! Clique "colar" para exibir seu texto aqui!');
+		});
+
+
+
+>	Refatorar função COLAR TEXTO
+	============================
+
+	Obs.: Conforme determinação da W3C, por questões de segurança,
+		  nem todos os navegadores aceitam este recurso.
+		  Nos testes realizados, tanto em ambiente Windows 11
+		  quanto no Linux Mint, o recurso "colar" funcionou
+		  no Chrome (Windows) e no Chromium (Linux),
+		  mas não funcionou no navegador Firefox em nenhum dos ambientes.
+
+
+	- Lógica da tarefa:
+		- Buscar o elemento HTML pelo ID do botão colar,
+		  aguardar clique do usuário no botão colar
+		  para receber os dados da área de transferência (memória)
+		  e exibir esses dados recebidos na área de texto e, caso queira,
+		  emitir alerta ou mensagem de confirmação da ação.
+
+
+	código original
+	===============
+
+		document.getElementById('colar')
+			.addEventListener('click', async function (e) {
+				const colar = await navigator.clipboard.readText();
+				document.getElementById('texto').value = colar;
+		});
+
+
+	código refatorado
+	=================
+
+		captaEvento(btnColar, 'click', async () => {
+			const colar = await colaMemo();
+			areaTexto.value = colar;
+		});
+
+
+	Processo de transformação
+	-------------------------
+
+	1.	Versão original
+
+		document.getElementById('colar')
+			.addEventListener('click', async function (e) {
+				const colar = await navigator.clipboard.readText();
+				document.getElementById('texto').value = colar;
+			});
+
+	1.1.	método para buscar elemento HTML pelo ID;
+	1.2.	método que detecta ação do usuário - clique do mouse;
+	1.3.	arrow function assíncrona como parâmetro do método de detecção;
+	1.4.	constante que recebe a palavra-chave de espera junto com o
+			método que lê o conteúdo da área de transferência (memória),
+			tudo declarado como instrução da função assíncrona;
+	1.5.	também como instrução da função assíncrona, a declaração
+			do método que busca o elemento HTML pelo id da área de texto;
+	1.6.	caso queira exibir alerta ou aviso confirmando a conclusão
+			da tarefa, declarar como instrução da função assíncrona.
+
+
+	2.	Substituir o método de buscar elemento pelo ID por uma constante
+		que recebe o método e transformar a função assíncrona em arrow function
+
+        btnColar.addEventListener('click', async (e) => {
+            const colar = await navigator.clipboard.readText();
+            areaTexto.value = colar;
+            alert('Clique em OK para inserir o texto!');
+        });
+
+
+	3.	Substituir o método de leitura da área de transferência (memória)
+		por uma função auxiliar
+
+		btnColar.addEventListener('click', async e => {
+			const colar = await colaMemo();
+			document.getElementById('texto').value = colar;
+		});
+
+
+	4.	Substituir o método que busca o valor do elemento HTML
+		da área de texto pela função auxiliar que irá receber
+		a constante que armazena o conteúdo lido da memória.
+
+		btnColar.addEventListener('click', async e => {
+			const colar = await colaMemo();
+			areaTexto.value = colar;
+		});
+
+
+	5.	Substituir o método que detecta o evento do clique do usuário
+		pela função auxiliar e declarar como seus parâmetros
+		a constante do botão colar, o evento do clique e a função assíncrona
+
+		captaEvento(btnColar, 'click', async e => {
+			const colar = await colaMemo();
+			areaTexto.value = colar;
+		});
+
+	6.	Ajustar a declaração do parâmetro da função assíncrona para nulo (),
+		finalizando a transformação da ação de colar o texto ao clicar no botão
+
+		captaEvento(btnColar, 'click', async () => {
+			const colar = await colaMemo();
+			areaTexto.value = colar;
+		});
+
+
+>	Refatorar função RECARREGAR A PÁGINA
+	====================================
+
+	- Lógica da tarefa:
+		- chamar o botão e armazenar em uma constante
+		- chamar constante e adicionar evento
+		  com função anônima para recarregar a página
+
+
+	código original
+	===============
+
+		const btn = document.querySelector('#refresh')
+
+		btn.addEventListener('click', () => {
+		location.reload(true);} );
+
+
+	código refatorado
+	=================
+
+		captaEvento(btnRecarregar, 'click', recarregar);
+
+
+	Processo de transformação
+	-------------------------
+
+	1.	Versão original
+
+		const btn = document.querySelector('#refresh')
+
+		btn.addEventListener('click', () => {
+		location.reload(true);} );
+
+	1.1.	Constante para receber elemento HTML pelo ID do botão recarregar;
+	1.2.	Vincular a esta constante o método que detecta ação do usuário;
+	1.3.	e este método recebe como parâmetro uma função anônima;
+	1.4.	esta função anônima recebe como instrução o método que
+			recarrega a página;
+	1.5.	O parâmetro "true" deste método equivale ao "ctrl + F5",
+			recarrega a página apagando o cache armazenado.
+
+
+	2.	Substituir o método que busca elemento HTML pelo ID do botão recarregar
+		para ser armazenado em uma constante pela função auxiliar
+
+		const btnRefresh = buscaId('refresh');
+
+
+	2.	Substituir a constante pela função auxiliar que detecta evento do usuário
+		e recebe como parâmetros a constante do botão colar, o evento do clique
+		e também a função de recarregar a página.
+
+		captaEvento(btnRecarregar, 'click', recarregar);
+
+
+--- fim.
