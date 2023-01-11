@@ -1,14 +1,14 @@
->>> iframe - página esquematizada do projeto
+>>> iframe - esquematização do projeto Codificador ONE - Oracle / Alura
 
 /----------------------------------------------------------------------------------------\
 |  DIV (pagina) - toda a área da página do projeto                                       |
 |                                                                                        |
 | /--- --------------------------------------------------------------------------------\ |
-| |   HEADER - <img> (logo-a) <h1> título da página                                    | |
+| |   HEADER (cabecalho) - <img> (logo-a) <h1> título da página                        | |
 | \---------------------------------------------------- -------------------------------/ |
 |                                                                                        |
 | /------------------------------------------------------ -----------------------------\ |
-| |  MAIN (main) - com duas sections (direita e esquerda)                            | |
+| |  MAIN (main) - com duas sections (esquerda e direita)                              | |
 | |                                                                                    | |
 | |  /-------------------------------------\  /-------------------------------------\  | |
 | |  | SECTION (esquerda)                  |  | SECTION (direita)                   |  | |
@@ -25,7 +25,7 @@
 | |  |                                     |  |    <img> lupa.png (lupa)            |  | |
 | |  |                                     |  |    <p> Digite texto                 |  | |
 | |  |  <p>                                |  |                                     |  | |
-| |  |   <img> exclamacao.png (exclamacao  |  | /---------------------------------\ |  | |
+| |  |   <img> exclamacao.png (exclamacao) |  | /---------------------------------\ |  | |
 | |  |   <span> texto aviso (aviso)        |  | | DIV (botoes-direita)            | |  | |
 | |  |                                     |  | |                                 | |  | |
 | |  | /---------------------------------\ |  | | /-------------\ /-------------\ | |  | |
@@ -42,7 +42,7 @@
 | \------------------------------------------------------------------------------------/ |
 |                                                                                        |
 | /------------------------------------------------------------------------------------\ |
-| |  FOOTER - Créditos e links institucionais                                          | |
+| |  FOOTER (rodape) - Créditos e links institucionais                                 | |
 | \------------------------------------------------------------------------------------/ |
 \----------------------------------------------------------------------------------------/
 
@@ -52,38 +52,38 @@ Elementos HTML essenciais
 	<!DOCTYPE html>
 
 	<html lang="pt-br">
-	</html>html>
 
 Elementos HTML de metadados
 ===========================
 
-	<head>
+  <head>
 
-		<meta charset="UTF-8"/>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="Neto Paiva">
-		<meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
-		<meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
-		<title>NetoPaiva | codificador | t4 one</title>
-		<link rel="icon" type="image/png" href="refatorados/icon_netopaiva.png">
-		<link rel="stylesheet" type="text/css" media="screen" href="t4_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decodificador - Challenge Oracle/Alura - Programa ONE">
+    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge">
+    <meta name="author" content="Neto Paiva">
+    <title>t4one(codifica, () => {</title>
+    <link rel="icon" type="image/png" href="images/icon_netopaiva.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="t4_style.css">
 
-	</head>
+  </head>
 
 
 Elementos HTML da estrutura da página:
 ======================================
 
 	<body>
+	
 		<div id="pagina"> - toda a área da página do projeto
 
 			<header id="cabecalho">
 				<img id="logo-a" logo-a.png>
-				<h1 id="titulo">título</h1>h1>
+				<h1 id="titulo">título</h1>
 			</header>
 
 			<main id="principal"> - com duas sections
+			
 				<section id="esquerda">
 					<input id="entrada">texto</input>
 					<p>
@@ -95,6 +95,7 @@ Elementos HTML da estrutura da página:
 						<button id="decodifica">decodificar</button>
 					</div>
 				</section>
+				
 				<section id="direita">
 					<textarea id="saida">texto</textarea>
 					<img id="lupa" lupa.png>
@@ -105,8 +106,11 @@ Elementos HTML da estrutura da página:
 						<button id="recarregar">recarregar</button>
 					</div>
 				</section>
+				
 			</main>
+			
 			<footer id="rodape">
+			
 				<p>
 					<a link meugithub>Desenvolvido por</a>
 					<a link alura/one>
@@ -114,8 +118,19 @@ Elementos HTML da estrutura da página:
 						<img id="logo_oracle-alura">
 					</a>
 				</p>
+				
 			</footer>
+			
 		</div>
+		
 	</body>
 
-	<script>chamar arquivo script.js</script>
+	<script> arquivo script.js </script>
+
+</html>
+
+
+
+<!-- .fim  ;) -->
+
+

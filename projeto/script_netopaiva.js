@@ -1,4 +1,4 @@
-//  script JS Neto Paiva - Projeto Codificar - Challenge ONE/Alura jan-2023
+//  script JS Neto Paiva - Projeto Codificar - Challenge t4 ONE/Alura jan-2023
 
 
 //  Funções auxiliares
@@ -24,6 +24,7 @@
 
 
 //	- Receber seletores HTML áreas de texto e botões
+//  ================================================
 
 		const textoEntrada = buscaId('entrada');
 		const textoSaida = buscaId('saida');
@@ -37,62 +38,56 @@
 //  Funções dos botões
 //  ==================
 
+//- ainda falta ocultar e mostrar textarea/imagem
+
 //	Codificar
-	captaEvento(btnCodificar, 'click', () => {
-		var doc = buscaId('entrada').value;
+		captaEvento(btnCodificar, 'click', () => {
+			var doc = buscaId('entrada').value;
 
-		doc = doc
-			.normalize('NFD')
-			.replace(/[^a-zA-Z\s]/g, "")
-			.toLowerCase()
+			doc = doc
+				.normalize('NFD')
+				.replace(/[^a-zA-Z\s]/g, "")
+				.toLowerCase();
 
-//		só nesta ordem codifica e decodifica corretamente
-		doc = doc.replace(/e/g, 'enter');
-		doc = doc.replace(/i/g, 'imes');
-		doc = doc.replace(/a/g, 'ai');
-		doc = doc.replace(/o/g, 'ober');
-		doc = doc.replace(/u/g, 'ufat');
+	//		só nesta ordem codifica e decodifica corretamente
+			doc = doc.replace(/e/g, 'enter');
+			doc = doc.replace(/i/g, 'imes');
+			doc = doc.replace(/a/g, 'ai');
+			doc = doc.replace(/o/g, 'ober');
+			doc = doc.replace(/u/g, 'ufat');
 
-		buscaId('saida').value = doc;
-		limpaArea('entrada', '');
-	});
-
+			buscaId('saida').value = doc;
+			limpaArea('entrada', '');
+		});
 
 //	Decodificar
-	captaEvento(btnDecodificar, 'click', () => {
-		var doc = buscaId('entrada').value;
+		captaEvento(btnDecodificar, 'click', () => {
+			var doc = buscaId('entrada').value;
 
-//		só nesta ordem codifica e decodifica corretamente
-		doc = doc.replace(/enter/g, 'e');
-		doc = doc.replace(/imes/g, 'i');
-		doc = doc.replace(/ai/g, 'a');
-		doc = doc.replace(/ober/g, 'o');
-		doc = doc.replace(/ufat/g, 'u');
+	//		só nesta ordem codifica e decodifica corretamente
+			doc = doc.replace(/enter/g, 'e');
+			doc = doc.replace(/imes/g, 'i');
+			doc = doc.replace(/ai/g, 'a');
+			doc = doc.replace(/ober/g, 'o');
+			doc = doc.replace(/ufat/g, 'u');
 
-		buscaId('saida').value = doc;
-		limpaArea('entrada', '');
-	});
-
+			buscaId('saida').value = doc;
+			limpaArea('entrada', '');
+		});
 
 //  Copiar
-
-	captaEvento(btnCopiar, 'click', () => {
-		copiaMemo(textoSaida);
-		limpaArea('saida', '');
-	});
-
+		captaEvento(btnCopiar, 'click', () => {
+			copiaMemo(textoSaida);
+			limpaArea('saida', '');
+		});
 
 //  Colar
-
-	captaEvento(btnColar, 'click', async () => {
-		const colar = await colaMemo();
-		textoEntrada.value = colar;
-	});
-
+		captaEvento(btnColar, 'click', async () => {
+			const colar = await colaMemo();
+			textoEntrada.value = colar;
+		});
 
 //  Recarregar a página
-
 		captaEvento(btnRecarregar, 'click', recarrega);
-
 
 //------.fim :)

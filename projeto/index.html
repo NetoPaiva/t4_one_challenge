@@ -2,81 +2,79 @@
 
 <html lang="pt-br">
 
-<head>
+  <head>
 
-	<meta charset="UTF-8"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decodificador - Challenge Oracle/Alura - Programa ONE">
+    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge">
     <meta name="author" content="Neto Paiva">
-    <meta name="description" content="Decodificador - Challenge Alura e Oracle - Programa ONE">
-    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge, ">
-	<title>NetoPaiva | codificador | t4 one</title>
-	<link rel="icon" type="image/png" href="images/icon_netopaiva.png">
-	<link rel='stylesheet' type='text/css' media='screen' href='t4_style.css'>
+    <title>t4one(codifica, () => {</title>
+    <link rel="icon" type="image/png" href="images/icon_netopaiva.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="t4_style.css">
 
-</head>
+  </head>
 
-<body>
+  <body>
+  
+    <div id="pagina">
 
-	<div id="pagina">
+      <header id="cabecalho">
+        <h1 id="titulo">
+          <img id="logo-a" src="images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
+          <span>=> codifica.texto(t4_one);</span>
+        </h1>
+        
+      </header>
 
-		<header id="cabecalho">
-			<img id="logo-a" src="images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
-			<h1 id="titulo">Codificador de textos</h1>
-		</header>
+      <main id="principal">
 
-		<main id="principal">
+        <section id="esquerda">
+          <input id="entrada" type="textarea" name="entrada" placeholder="Digite seu texto..."/>
 
-			<section id="esquerda">
-				<input id="entrada" type="textarea" name="entrada" placeholder="Digite seu texto..."/>
+          <p>
+            <img id="exclamacao" src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura">
+            <span id="aviso">| Apenas letras minúsculas e sem acento.</span>
+          </p>
 
-				<p>
-					<img id="exclamacao" src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura">
-					<span id="aviso">| Apenas letras minúsculas e sem acento.</span>
-				</p>
+          <div id="botoes-esquerda">
+            <button id="codifica" name="btn-codifica">codificar</button>
+            <button id="decodifica" name="btn-decodifica">decodificar</button>
+          </div>
+        </section>
 
-                <div id="botoes-esquerda">
-				    <button id="codifica" name="btn-codifica">Codificar</button>
-				    <button id="decodifica" name="btn-decodifica">Decodificar</button>                    
-                </div>
-			</section>
+        <section id="direita">
+          <textarea id="saida" name="saida-texto" placeholder="Nenhuma mensagem encontrada."></textarea>
+          <br>
+          <img id="lupa" src="images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante">
+          <br>
+          <p>Digite um texto que você deseja codificar ou decodificar.</p>
 
-			<section id="direita">
+          <div id="botoes-direita">
+            <button id="copiar" name="btn-copiar">copiar</button>
+            <button id="colar" name="btn-colar">colar</button>
+            <button id="recarregar" name="btn-recarregar">recarregar</button>
+          </div>
+        </section>
+      </main>
 
-				<textarea id="saida" name="saida-texto" placeholder="Nenhuma mensagem encontrada." wrap ></textarea>
-				<br>
-				<img id="lupa" src="images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante">
-				<br>
-				<p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+      <footer id="rodape">
+        <hr>
+        <p>
+          &#169; Desenvolvido por
+          <a href="https://github.com/NetoPaiva" target="_blank">Neto Paiva</a>
+          | JAN.2023 |
+          <a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
+          <img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura">
+          | Progrma ONE - Oracle Next Education
+          </a>
+        </p>
+      </footer>
 
-                <div id="botoes-direita">
-				    <button id="copiar" name="btn-copiar">copiar</button>
-				    <button id="colar" name="btn-colar">colar</button>
-				    <button id="recarregar" name="btn-recarregar">recarregar</button>
-                </div>
+    </div>
+    
+  </body>
 
-			</section>
-
-		</main>
-
-		<footer id="rodape">
-			<hr>
-			<p>
-                &#169; Desenvolvido por
-                <a href="https://github.com/NetoPaiva" target="_blank">
-                 Neto Paiva
-                </a>
-                 | JAN.2023 |
-                <a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
-                    <img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura">
-                  | Progrma ONE - Oracle Next Education
-                </a>
-            </p>
-		</footer>
-	</div>
-</body>
-
-<script src="script_netopaiva.js"></script>
+  <script src="script_netopaiva.js"></script>
+  
 </html>
-
-
