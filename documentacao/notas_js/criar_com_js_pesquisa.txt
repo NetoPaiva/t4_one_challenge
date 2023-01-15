@@ -1,0 +1,87 @@
+
+Criar elemento HTML com JavaScript
+
+Referências
+
+MDN:
+	https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement
+
+W3Schools:
+	https://www.w3schools.com/jsref/met_document_createelement.asp
+
+Vídeo
+	https://youtu.be/eC-z9oHLzBc
+
+
+Criar elementos
+	- JS /DOM
+	- texto do elemento é um nó da árvore do DOM;
+	- criar o elemento (tag);
+	- criar o  texto do elemento;
+	- inserir no HTML;
+	- selecionar o elemento pai para inserir elemento HTML
+		- qualquer elemento superior ao que será criado
+			- body / div / ...
+
+		Criar os arquivos
+
+			- HTML com estrutura básica
+			- JS para criar as funcionalidades.
+
+		No arquivo JavaScript
+
+-		Criar parágrafo e texto e inserir no "body" do HTML
+
+1.	Criar parágrafo <p></p> no HTML:
+		- declarar variável
+		- que recebe o método ".createElement('p');",
+		- parâmetro do método é a tag "p" como String.
+
+2.	Criar o texto deste parágrafo:
+		- declarar variável
+		- que recebe o método ".creatTextNode('conteúdo')"
+		- parâmetro do método é o conteúdo do parágrafo (texto)).
+
+3.	Inserir texto no elemento criado:
+		- chamar a variável do elemento
+		- vincular o método ".appendChild(texto);"
+		- parâmetro do método é a variável do texto.
+
+4.	Selecionar elemento HTML que receberá elemento/texto criado:
+		- declarar variável
+		- que recebe o método ".querySelector('body')"
+		- parâmetro é a tag do elemento que receberá texto.
+
+5.	Inserir no "body" o elemento/texto criado:
+		- chamar a variável do elemento
+		- vincular método ".appendChild(novoParagafo);"
+		- parâmetro é a variável do novo elemento.
+
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>JS cria tag e conteúdo HTML</title>
+  </head>
+
+<body>
+<script>
+
+		var novoParagafo = document.createElement('p');
+		var texto = document.createTextNode('Texto que irá aparecer');
+
+		novoParagafo.appendChild(texto);
+
+		var body = document.querySelector('body');
+
+		body.appendChild(novoParagafo);
+
+</script>
+</body>
+</html>
+
+
+vídeo parou em 4:45

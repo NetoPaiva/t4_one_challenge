@@ -7,74 +7,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Decodificador - Challenge Oracle/Alura - Programa ONE">
-    <meta name="keywords" content="html, css, js, javascript, Alura, Oracle, ONE, Challenge">
+    <meta name="keywords" content="html, css, js, JavaScript, Alura, Oracle, ONE, Challenge">
     <meta name="author" content="Neto Paiva">
-    <title>t4one(codifica, () => {</title>
+    <title>=> codDoc.text(t4_one);</title>
     <link rel="icon" type="image/png" href="images/icon_netopaiva.png">
-    <link rel="stylesheet" type="text/css" media="screen" href="t4_style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="netopaiva_style.css">
 
   </head>
 
   <body>
-  
+
     <div id="pagina">
 
       <header id="cabecalho">
         <h1 id="titulo">
-          <img id="logo-a" src="images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
-          <span>=> codifica.texto(t4_one);</span>
+          <img id="logo-alura" src="images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
+          <span> => codDoc.text(t4_one);</span>
         </h1>
-        
       </header>
 
       <main id="principal">
 
         <section id="esquerda">
-          <input id="entrada" type="textarea" name="entrada" placeholder="Digite seu texto..."/>
+					<textarea id="entrada" placeholder="digite aqui seu texto..." cols="41" rows="4"></textarea>
 
-          <p>
-            <img id="exclamacao" src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura">
-            <span id="aviso">| Apenas letras minúsculas e sem acento.</span>
-          </p>
+					<div id="aviso">
+						<p>
+							<img id="exclamacao" src="images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura" width="14px">
+							<span>| Apenas letras minúsculas e sem acento.</span>
+						</p>
+					</div>
 
           <div id="botoes-esquerda">
-            <button id="codifica" name="btn-codifica">codificar</button>
+            <button onclick="codificar" id="codifica" name="btn-codifica">codificar</button>
             <button id="decodifica" name="btn-decodifica">decodificar</button>
           </div>
         </section>
 
         <section id="direita">
-          <textarea id="saida" name="saida-texto" placeholder="Nenhuma mensagem encontrada."></textarea>
-          <br>
+          <textarea id="saida" name="saida-texto"></textarea>
+   <!--
           <img id="lupa" src="images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante">
           <br>
           <p>Digite um texto que você deseja codificar ou decodificar.</p>
-
+-->
           <div id="botoes-direita">
             <button id="copiar" name="btn-copiar">copiar</button>
             <button id="colar" name="btn-colar">colar</button>
             <button id="recarregar" name="btn-recarregar">recarregar</button>
-          </div>
+					</div>
+					<p>Infelizmente, botão "colar" não funciona em alguns navegadores.</p>
         </section>
+
       </main>
 
-      <footer id="rodape">
-        <hr>
-        <p>
-          &#169; Desenvolvido por
-          <a href="https://github.com/NetoPaiva" target="_blank">Neto Paiva</a>
-          | JAN.2023 |
-          <a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
-          <img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura">
-          | Progrma ONE - Oracle Next Education
-          </a>
-        </p>
-      </footer>
+			<footer id="rodape">
+
+				<div class="icons">
+
+					<a href="https://github.com/NetoPaiva" target="_blank">
+						<img src="images/icon-github.svg" width="30px" alt="logo GitHub" class="icon">
+					</a>
+
+					<a href="https://www.linkedin.com/in/netopaiva/" target="_blank">
+						<img src="images/icon-linkedin.svg" width="30px" alt="logo LinkedIn" class="icon">
+					</a>
+
+					<a href="mailto:netopaiva@yahoo.com">
+						<img src="images/icon-mail.svg" width="30px" alt="ícone email"class="icon">
+					</a>
+
+				</div>
+
+				<div class="autoria">
+
+						<p>&#169;  desenvolvido por <a target="_blank" href="mailto:netopaiva@yahoo.com">
+							NetoPaiva</a> &lt;janeiro.23&gt;</p>
+
+						<p>| Progrma ONE - Oracle Next Education -
+							<a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
+								<img src="images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura" height="15px"> |
+							</a>
+						</p>
+
+				</div>
+
+			</footer>
 
     </div>
-    
+
   </body>
 
-  <script src="script_netopaiva.js"></script>
-  
+  <script src="netopaiva_script.js"></script>
+
 </html>
+
+
+<!--	--- .fim ;)  -->

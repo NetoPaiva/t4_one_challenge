@@ -1,0 +1,112 @@
+Refatorando o processo de criar elementos e conteúdo HTML via JS
+
+1.  Criar elemento HTML
+2.  Criar conteúdo do elemento (tipo texto)
+3.  Inserir conteúdo no elemento criado
+4.  Selecionar o elemento pai que receberá elemento/conteúdo criado
+5.  Inserir elemento/conteúdo criado no elemento pai
+
+
+
+/*	Funcionalidades com estrutura básica e estática
+	===============================================
+
+	var criaTag = document.createElement('p');
+	var texto = document.createTextNode('Texto que irá aparecer');
+	criaTag.appendChild(texto);
+	var tagPai = document.querySelector('body');
+	tagPai.appendChild(criaTag);
+
+*/
+
+/*	Funcionalidades comentadas passo-a-passo
+	==========================================
+
+	1. Criar elemento HTML e armazenar em variável
+	var criaTag = document.createElement('p');
+
+	2. Criar texto e armazenar em variável
+	var texto = document.createTextNode('Texto que irá aparecer');
+
+	3. Inserir texto no elemento
+	criaTag.appendChild(texto);
+
+	4. Selecionar elemento pai
+	var tagPai = document.querySelector('body');
+
+	5. Inserir no elemento pai
+	tagPai.appendChild(criaTag);
+*/
+
+
+/*	Versão função normal - instrução original
+
+	//function criarTexto(x,z,y){
+		//var criaTag = document.createElement(x);
+		//var texto = document.createTextNode(y);
+		//criaTag.appendChild(texto);
+		//var tagPai = document.querySelector(z);
+		//tagPai.appendChild(criaTag);
+	//}
+
+	//criarTexto('h1', 'body', 'Título da página');
+	//criarTexto('p', 'body', 'Texto do parágrafo 1.');
+	//criarTexto('p', 'body', 'Texto do parágrafo 2.');
+
+ */
+
+//	Versão função compacta - boa opção
+
+	function criarTexto(z,x,y){
+		a = document.createElement(x);
+		b = document.createTextNode(y);
+		c = a.appendChild(b);
+		d = document.querySelector(z);
+		d.appendChild(a,b);
+	}
+
+	criarTexto('body', 'h1', 'Título da página');
+	criarTexto('body', 'h2', 'Texto do subtítulo.');
+	criarTexto('body', 'p', 'Texto do parágrafo 1.');
+
+
+/*	Versão função arrow compacta - boa opção
+
+	let criarTexto = (z,x,y) => {
+		a = document.createElement(x);
+		b = document.createTextNode(y);
+		c = a.appendChild(b);
+		d = document.querySelector(z);
+		d.appendChild(a,b);
+	}
+
+	criarTexto('body', 'h1', 'Título da página');
+	criarTexto('body', 'h2', 'Texto do subtítulo.');
+	criarTexto('body', 'p', 'Texto do parágrafo 1.');
+	criarTexto('body', 'p', '._fim_ ; )');
+*/
+
+/* Versão arrow com funções auxiliares
+
+//	funções auxiliares
+	//let criaTag = x => document.createElement(x);
+	//let criaConteudo = x => document.createTextNode(x);
+	//let insereConteudo = (x,y) => x.appendChild(y);
+	//let selecionaPai = (x) => document.querySelector(x);
+
+// Função principal
+
+	//let criarTexto = (z,x,y) => {
+		//a = criaTag(x);
+		//b = criaConteudo(y);
+		//c = insereConteudo(a,b);
+		//d = selecionaPai(z);
+		//d.appendChild(a,b);
+	//}
+*/
+
+
+//._fim_ . ;)
+
+
+//

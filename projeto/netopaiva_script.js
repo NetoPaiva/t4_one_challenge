@@ -38,10 +38,10 @@
 //  Funções dos botões
 //  ==================
 
-//- ainda falta ocultar e mostrar textarea/imagem
+//- ainda falta programar ocultar e mostrar textarea/imagem e botões
 
 //	Codificar
-		captaEvento(btnCodificar, 'click', () => {
+		let codificar = captaEvento(btnCodificar, 'click', () => {
 			var doc = buscaId('entrada').value;
 
 			doc = doc
@@ -50,15 +50,22 @@
 				.toLowerCase();
 
 	//		só nesta ordem codifica e decodifica corretamente
-			doc = doc.replace(/e/g, 'enter');
-			doc = doc.replace(/i/g, 'imes');
-			doc = doc.replace(/a/g, 'ai');
-			doc = doc.replace(/o/g, 'ober');
-			doc = doc.replace(/u/g, 'ufat');
+			doc = doc.replace(/e/g, 'enter')
+							  .replace(/i/g, 'imes')
+			          .replace(/a/g, 'ai')
+			          .replace(/o/g, 'ober')
+			          .replace(/u/g, 'ufat');
 
 			buscaId('saida').value = doc;
 			limpaArea('entrada', '');
 		});
+
+		function copiar(){
+			var textoCop = document.getElementById('entrada');
+			textoCop.select();
+			document.execCommand('copy');
+			alert ('Texto Copiado');
+		}
 
 //	Decodificar
 		captaEvento(btnDecodificar, 'click', () => {
@@ -90,4 +97,5 @@
 //  Recarregar a página
 		captaEvento(btnRecarregar, 'click', recarrega);
 
-//------.fim :)
+
+//---  .fim :)

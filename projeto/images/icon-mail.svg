@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="ionicon"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="mail.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:zoom="1.3652344"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:current-layer="svg6" />
+  <title
+     id="title2">Mail</title>
+  <path
+     id="path13462"
+     style="fill:#82828c;fill-opacity:1;stroke:none;stroke-width:0.638008"
+     d="M 194.92513,28.124896 A 235.97899,235.97899 0 0 0 41.896301,157.8229 50.879168,50.879168 0 0 1 67.381286,141.23391 L 361.93584,62.308252 a 50.879168,50.879168 0 0 1 31.29577,1.829586 235.97899,235.97899 0 0 0 -198.30648,-36.012942 z m 222.84384,56.199662 a 15.576189,15.576189 0 0 0 -6.06731,4.606197 L 304.83783,232.14483 a 15.577746,15.577746 0 0 0 -0.67152,0.5803 l -40.3696,54.37139 -62.14682,-26.9022 -164.021963,-71.00857 a 15.576189,15.576189 0 0 0 -7.281344,-0.92833 235.97899,235.97899 0 0 0 -2.283462,128.88095 235.97899,235.97899 0 0 0 66.441564,110.49243 15.576189,15.576189 0 0 0 5.641995,-4.23139 L 200.3896,293.5921 l 62.36307,26.99995 a 15.577746,15.577746 0 0 0 6.77209,1.26901 15.577746,15.577746 0 0 0 4.43874,-1.18329 15.577746,15.577746 0 0 0 2.22427,-0.59599 15.577746,15.577746 0 0 0 3.14285,-2.68419 15.577746,15.577746 0 0 0 2.09338,-1.78626 l 0.0162,-0.0225 0.53146,-0.7106 40.14145,-53.79667 151.56389,62.23075 a 15.576189,15.576189 0 0 0 7.94204,0.66232 235.97899,235.97899 0 0 0 2.31957,-128.98768 235.97899,235.97899 0 0 0 -66.16964,-110.662352 z m 11.55039,33.085162 46.37006,173.05541 -134.34233,-55.15995 z M 36.586293,222.68267 170.89017,280.82328 82.747581,394.95894 Z M 119.70502,448.1939 a 235.97899,235.97899 0 0 0 197.37157,35.80649 235.97899,235.97899 0 0 0 153.02608,-129.69322 50.879168,50.879168 0 0 1 -25.48223,16.58421 l -294.55456,78.92565 a 50.879168,50.879168 0 0 1 -30.36086,-1.62313 z" />
+</svg>
