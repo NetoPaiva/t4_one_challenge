@@ -4,16 +4,14 @@ Anotações do andamento do projeto
 1. Criar repositório no GitHub
 ==============================
 
-	- Login na plataforma GitHub
+	- Login na plataforma
 	- Repositories / New
-	- nomear e escrever descrição
+	- Nomear e escrever descrição
 	- Create repository
 
 
 2. Iniciar monitoramento de versão / primeiro commit
 ====================================================
-
-- via terminal
 
 	- criar pasta para o projeto
 
@@ -22,8 +20,8 @@ Anotações do andamento do projeto
 	- iniciar o monitoramento do GitHub
 		<git init>
 
-	- configurar usário global
-		git config --global user.name "seu-usário-no-github">
+	- configurar usuário global
+		git config --global user.name "seu-usuário-no-github">
 
 	- configurar email global
 		<git config --global user.email "seu-email">
@@ -31,14 +29,14 @@ Anotações do andamento do projeto
 	- verificar se está tudo ok
 		<git status>
 
-	- criar aqruivo README.md com as principais informações do projeto
+	- criar arquivo README.md com as principais informações do projeto
 		(arquivo no formato markdown - .md)
 
 	- adicionar README no monitoramento
 		<git add README.md>
 
-	- cirar primeiro commit de incluão do README
-		<git commit -m"descrição-do-commit">
+	- criar primeiro commit de inclusão do README
+		<git commit -m "descrição-do-commit">
 
 	- definir o ramo principal como "main"
 		<git branch -M main>
@@ -57,89 +55,102 @@ Anotações do andamento do projeto
 			(depois, basta usar <git push> para enviar)
 
 
-3. Criar pastas para organizar repositório do prrojeto
-======================================================
+3. Criar pastas para organizar repositório do projeto
+=====================================================
 
 	- documentação
-	- arquivos de anotações e orientações
+		- arquivos de pesquisas, anotações e orientações
 
 	- projeto
-	- pastas e arquivos com os códigos do projeto
+		- arquivos com os códigos e imagens do projeto
 
 
-4. Inicar a estrutura HTML
-==========================
+4. Iniciar a estrutura HTML
+===========================
 
 	- criar "index.html" com a estrutura básica
-	-----------------------------------------
-	<!DOCTYPE html>
-	<html lang="pt-br">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>NetoPaiva | codificador | t4 one</title>
-	</head>
-	<body>
-		<header></header>
-		<main></main>
-		<footer></footer>
+		-----------------------------------------
+		<!DOCTYPE html>
+		<html lang="pt-br">
+		<head>
+			<meta charset="UTF-8"/>
+			<title>NetoPaiva | codificador | t4 one</title>
+		</head>
+		<body>
+			<header></header>
+			<main></main>
+			<footer></footer>
+			<script></script>
 		</body>
-	</html>
-	<script>
-	</script>
-	-----------------------------------------
+		</html>
+		-----------------------------------------
 
 
 5.  Capturar elementos de design - Figma
 ========================================
 
-    - assistir ao vídeo de referência
-        Como Front-End utiliza o Figma
-        https://cursos.alura.com.br/como-front-end-utiliza-o-figma-c858
+	- assistir ao vídeo de referência
+		Como Front-End utiliza o Figma
+		https://cursos.alura.com.br/como-front-end-utiliza-o-figma-c858
 
-    - exportar imagens para a pasta "images" do projeto
-        - logo.png
-        - logo.svg
-        - lupa.png
-        - lupa.svg
-        - exclamation.png
-        - exclamation.svg
+	- exportar imagens para a pasta "images" do projeto
+		- logo.png
+		- logo.svg
+		- lupa.png
+		- lupa.svg
+		- exclamation.png
+		- exclamation.svg
 
-    - anotar propriedades CSS dos elementos
-        - layout desktop - página 1 e 2
-            - área total
-            - logo
-            - input
-            - área de texto
-            - botões
-            - aviso maiúsculas/acentos      
+	- anotar propriedades CSS dos elementos
+		- layout desktop - página 1 e 2
+			- área total
+			- logo
+			- input
+			- área de texto
+			- botões
+			- aviso caracteres válidos
 
 
-6. Pesqusiar soluções JavaScript
+6. Pesquisar soluções JavaScript
 ================================
 
-    - Copiar / Colar
-    - Codificar/Decodificar
-    - Resfresh 
-    - filtrar números, acentos, maiúsculas
-    - converter acentos e maiúsculas
+	- Copiar / Colar
+	- Codificar/Decodificar
+	- Resfresh
+	- filtrar números, acentos, maiúsculas
+	- converter acentos e maiúsculas
+	- exibir e ocultar elementos HTML
 
 
 7. Aplicar conceitos do Curso de CSS
 ====================================
 
-    - definir estilos aos elementos HTML
-    - posicionar elementos na página
-    - 
+	- importar fonte
+	- definir estilos aos elementos HTML
 
 
-8-
-==
+8- Testar aplicação
+===================
+
+	- verificar
+		- estrutura HTML
+		- funcionalidades JS
+		- layout CSS
 
 
-9-
-==
+9- Atualizar repositório GitHub
+================================
+
+	- versões do desenvolvimento
+	- versão final
 
 
+10- Entregar projeto
+====================
+
+	- Publicar no GitHub Pages
+	- Atualizar repositório
+	- Entregar na plataforma Alura
 
 
-
+/* ---. fim ;) */

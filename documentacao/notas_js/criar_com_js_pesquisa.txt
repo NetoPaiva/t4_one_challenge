@@ -1,4 +1,3 @@
-
 Criar elemento HTML com JavaScript
 
 Referências
@@ -11,6 +10,9 @@ W3Schools:
 
 Vídeo
 	https://youtu.be/eC-z9oHLzBc
+
+
+
 
 
 Criar elementos

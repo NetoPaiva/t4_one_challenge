@@ -1,0 +1,153 @@
+Exibir e ocultar elementos HTML com JS
+======================================
+
+
+Referência:
+	MDN
+	https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
+	W3Schools
+	https://www.w3schools.com/jsref/dom_obj_style.asp
+
+
+-	Acessar elemento HTML e alterar propriedade CSS com JS
+========================================================
+
+
+- A sintaxe do método
+---------------------
+
+	document.getElementById("idNane").style.propriedade = "valor";
+
+
+- O processo
+------------
+
+
+	1.	Estrutura HTML
+
+		- Criar arquivo HTML com todas as informações
+			- dos elementos visíveis e ocultos
+				- tags
+				- textos
+				- imagens
+
+
+	2.	Estilização CSS
+
+		- Criar arquivo CSS com todas as informações
+			- dos elementos visíveis
+				- propriedades e valores normais
+			- dos elementos ocultos
+				- propriedade "display" com valor "none"
+
+
+	3.	Funcionalidade JS
+
+		- Declarar o método dentro da função, conforme o projeto
+			- chamar método para ocultar ou exibir elementos
+
+
+Exemplo deste projeto do Codificador t4_ONE
+===========================================
+
+- O projeto
+-----------
+
+	- Área de saída de texto com visibilidade em duas etapas
+
+		- etapa inicial exibe
+			- ilustração
+			- textos informativos
+
+		- etapa posterior
+			- oculta
+				- ilustração
+				- textos informativos
+			- exibe
+				- área de saída de texto
+				- botões copiar / colar / recarregar
+				- texto informativo
+
+
+- A estrutura HTML
+------------------
+
+	- Área de saída de texto <section> com duas divisões
+
+		- divisão inicial (tela1) contém
+			- ilustração <img>
+			- textos <h3> e <p>
+
+		- divisão posterior (tela2) contém
+			- área de saída de texto <textarea>
+			-	divisão para os botões e texto <div>
+			- texto informativo <p>
+			- divisão para os botões <div>
+			- os botões <button>
+
+
+- A estilização CSS
+-------------------
+
+	- Definição de estilo para todos os elementos
+		- exceto a divisão posterior (tela2) que terá apenas
+			- display: none;
+
+
+- A funcionalidade JS
+---------------------
+
+	- Incluir o método nas funções codificar/decodificar
+
+		- Ao final da função
+
+			- declarar método para ocultar elemento
+				- buscar o elemento visível pelo ID (tela1)
+				- vincular elemento ao método de estilo (.style)
+				- informar qual propriedade CSS será manipulada (.display)
+				- informar o valor que será passado à propriedade (none)
+
+		document.getElementById("tela1").style.display = "none";
+
+			- declarar método para exibir elemento
+				- buscar o elemento oculto pelo ID (tela2)
+				- vincular elemento ao método de estilo (.style)
+				- informar qual propriedade CSS será manipulada (.display)
+				- informar o valor que será passado à propriedade (block)
+
+		document.getElementById("tela2").style.display = "block";
+
+
+	- Como neste projeto foram utilizadas funções auxiliares,
+	  as declarações do método dentro das funções codificar e decodificar
+	  ficaram assim:
+
+			buscaId('tela1').style.display = 'none';
+			buscaId('tela2').style.display = 'block';
+
+
+	- Se tivessem mais declarações de alterações na propriedade "display" ao longo do projeto, poderia simplificar o código criando uma função auxiliar para este método:
+
+			let mudaDisplay = (x, y) => buscaId(x).style.display = y;
+
+	- Chamar a função auxiliar para aplicar o método seria assim:
+
+			mudaDisplay('tela1', 'none');
+			mudaDisplay('tela2', 'block');
+
+
+	- E se não fossem apenas mudanças na propriedade "display", a função auxiliar poderia ficar ainda mais genérica:
+
+			let mudaCSS = (x, y, z) => buscaId(x).style.y = z;
+
+	- Chamar a função auxiliar para aplicar o método seria assim:
+
+			mudaCSS('tela1', 'display', 'none');
+			mudaCSS('rodape', 'align-items', 'left');
+			mudaCSS('pagina', 'background', '#ffffff');
+
+
+E é apenas isso, bem mais simples do que criar elementos HTML e propriedades CSS via JS
+
+/* ---. fim ;) */

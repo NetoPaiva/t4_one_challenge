@@ -64,11 +64,11 @@ Referência:
     |------------------------------------------------------------------------|
 
                 - função normal
-                
+
                 function buscaId(b){
                     return document.getElementById(b);
                 }
-        
+
 
         - função do tipo arrow
 
@@ -154,7 +154,7 @@ Referência:
 
     - codifica o conteúdo da variável, seguindo a exata ordem de substituição
       realizada pelo método "replace" e rearmazena na mesma variável;
- 
+
     - busca elemento HTML e exibe como valor o conteúdo da variável;
 
     - limpa o elemento HTML de entrada de dados e encerra a ação do botão.
@@ -262,11 +262,11 @@ Referência:
 2.3.1   Copiar em versão arrow-function
 =======================================
 
-        let copiar = () => 
+        let copiar = () =>
             var cop = buscaId('saida'),
             copiaMemo(cop),
             limpaArea('saida');
-        
+
 
 
 2.4.    Colar
@@ -280,7 +280,7 @@ Referência:
 		    textSaida.value = colar;
 		    alert('Clique em OK para colar a mensagem.');
 	    });
-            
+
 
             copiaMemo(cola);
             limpaArea('saida');

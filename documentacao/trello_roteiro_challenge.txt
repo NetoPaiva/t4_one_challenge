@@ -135,8 +135,4 @@ Ah, para fazer a cópia do quadro no Trello
 
 Abs e bons projetos!!!
 
-
-
-
-
-
+/* ---. fim */

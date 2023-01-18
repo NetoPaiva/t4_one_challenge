@@ -1,0 +1,212 @@
+Live resolução do desafio Codificador - CSS
+
+	Vídeo
+		https://youtu.be/04QvWw4aHlk (youtube)
+		https://www.youtube.com/embed/04QvWw4aHlk (tela cheia)
+
+		início da parte CSS no vídeo: 12:40
+
+
+Estilização do projeto
+
+- Abrir o arquivo HTML do projeto
+- Dentro da tag head
+- Incluir o vínculo do arquivo CSS
+
+		<link rel="stylesheet" type="text/css"  href="style.css">
+
+	- tag link: busca itens dentro ou fora do arquivo
+	- atributos
+		- rel: indica o tipo de relação com o documento
+		- type: informa o tipo de arquivo
+		- href: informa o caminho onde está o arquivo
+
+- Todas as informações de estilização de cada elemento estão no projeto do Figma, basta selecionar cada elemento e verificar todas as propriedades e valores na aba "Inspect", lateral direita da plataforma.
+
+
+- Abrir e editar o arquivo "style.css"
+
+
+	Duas maneiras de importar fontes para o projeto
+
+
+- Importar a fonte do projeto para o arquivo HTML
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css"  href="style.css">
+
+	- acessar o site Google Fonts
+	- buscar a fonte Inter
+	- selecionar a família 400 da fonte
+	- no ícone das famílias (canto superior direito)
+	- na parte "Use on the web"
+	- selecionar o opção "<link>"
+	- copiar toda a declaração de link da fonte e família selecionada
+	- voltar no arquivo HTML e colar o link dentro da tag "head", antes da vinculação do CSS
+
+
+
+- Importar a fonte do projeto para o arquivo CSS
+
+		@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+	- repetir a busca / seleção da fonte no site do Google Fonts
+	- selecionar a opção @import
+	- copiar a instrução sem incluir a tag "style" abertura e fechamento
+	- colar a instrução na primeira linha do arquivo CSS
+
+
+- Definir configuração global para o documento
+
+		* {
+			background: #e5e5e5;
+			font-family: 'inter', sans-serif;
+			font-weight: 400;
+			font-size: 32px;
+			line-height: 48px;
+		}
+
+	- no arquivo CSS
+	- abaixo da declaração de importação da fonte
+	- incluir nova linha e digitar
+	- * (asterisco): seletor global
+	- {} (chaves): delimita o corpo de declaração das propriedades e valores de cada elemento a ser estilizado
+	- background: a propriedade que representa o fundo da página
+	- #E5E5E5: é o valor que representa a cor do fundo da página
+	- ; (ponto-e-vírgula): sinal indica o final da declaração de cada propriedade
+	- font-family: propriedade do tipo de letra
+		- esta informação está no site Google Fonts, em "CSS rules to specify families", abaixo dos links de importação da fonte
+	- inter, sans-serif: o valor da propriedade da letra
+		- inter é a primeira opção
+		- sans-serif é a segunda opção, na falta da primeira
+			- se houver mais de um valor, devem ser separados por vírgulas (,)
+	- font-weight: peso e intensidade (normal/negrito) da fonte
+	- font-size: o tamanho da fonte
+	- line-height: define a entrelinha da fonte
+
+
+- Estilizar logo
+
+		.logo-alura{
+			margin-left: 10px;
+			padding-top: 10px;
+			width: 2%;
+		}
+
+	- .logo-alura: chamar o elemento HTML pela class (utiliza o "ponto" antes do nome da class)
+	- margin-left: margem à esquerda
+	- padding-top: afastamento do topo
+	- width: largura
+
+
+- Estilizar a tag "main"
+
+			main{
+				display: flex;
+				margin-bottom: 50px;
+				margin-left: 80px;
+			}
+
+	- main: chamar o elemento pelo próprio nome
+	- display flex: organiza os elementos um ao lado do outro, no caso do projeto, as "sections" 1 e 2; por padrão a disposição em bloco é ficar abaixo um do outro.
+	- margin-bottom: a margem de baixo
+
+
+- Estilizar a área de texto
+
+		.text-area{
+			border: none;
+			color: #0a3871;
+			margin-top: 90px;
+			text-transform: lowercase;
+		}
+
+	- .text-area: chamar o elemento pela class
+	- border: propriedade da borda do elemento
+	- none: valor "nenhum"
+	- color: propriedade da cor do texto
+	- text-transform: propriedade que transforma o texto
+	- margin-top: propriedade da margem superior
+	- lowercase: valor para letras minúsculas
+
+
+- Estilizar o "placeholder" da área de texto
+
+		::placeholder { color: #0A3871; }
+
+	- chama o atributo do elemento HTML
+	- definir a cor do texto indicativo
+
+
+- Estilizar a área de texto quando selecionada
+
+	.text-area:focus {
+		outline: none;
+	}
+
+	- .text-area:focus : declaração do comportamento do elemento quando selecionado
+	- outline: propriedade da borda
+	- none: para não aparecer a borda
+
+- Estilizar o texto de aviso
+
+		h6{
+			color: #495057;
+			font-size: 18px;
+		}
+
+	- cor e fonte do texto
+
+
+- Estilizar a área de saída de texto
+
+		.mensagem{
+			background: white;
+			background-image: url(images/lupa.png);
+			background-repeat: no-repeat;
+			color: #0A3871;
+			border: none;
+			border-radius: 24px;
+			margin-left: 98px;
+			padding-left: 20px;
+			position: fixed;
+		}
+
+		.mensagem:focus{
+			outline: none;
+		}
+
+	- .mensagem: a class da área de saída de texto
+	- fundo brando
+	- background-image: propriedade adicionar imagem ao elemento
+	- url(): valor da propriedade que busca a imagem
+		- declarar o caminho da pasta images do projeto
+	- background-repeat: propriedade de repetição da imagem de fundo
+	- no-repeat: valor para não repetir imagem
+	- cor do texto quando aparecer
+	- deixar borda invisível
+	- arredondar a borda
+	- margem esquerda
+	- espaçamento interno
+	- posição fixa
+	- retirar a borda quando estiver selecionado
+
+
+- Estilizar a div dos botões codificar e decodificar
+
+	- posicionamento
+	- margem de topo
+	- espaço interno
+
+- Estilizar cada um dos botões (codificar, decodificar, copiar)
+
+	- cor
+	- borda
+	- canto arredondado
+	- "cursor: pointer": para mudar a aparência do cursor quando passar por cima do botão
+	- largura e altura
+
+
+/* ---. fim */
