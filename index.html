@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Decodificador - Challenge Oracle/Alura - Programa ONE">
+	<meta name="keywords" content="html, css, js, JavaScript, Alura, Oracle, ONE, Challenge">
+	<meta name="author" content="Neto Paiva">
+	<title>=> codDoc.text(t4_one);</title>
+	<link rel="icon" type="image/png" href="projeto/images/icon_netopaiva.png">
+	<link rel="stylesheet" type="text/css" media="screen" href="projeto/netopaiva_style.css">
+</head>
+
+<body>
+	<div id="pagina">
+		<header id="cabecalho">
+			<img id="logo-alura" src="projeto/images/logo_a.png" alt="logo Alura - letra 'a' minúscula, na cor azul escura">
+			<h1 id="titulo">&nbsp; => codDoc.text(t4_one);</h1>
+		</header>
+		<main id="principal">
+			<section id="esquerda">
+				<textarea id="entrada" placeholder="digite aqui seu texto..." cols="41" rows="4"></textarea>
+				<div id="aviso1">
+					<img id="exclamacao" src="projeto/images/exclamation.png" alt="ícone do ponto de exclamação na cor branca dentro de uma circunferência cinza escura" width="14px">
+					<p>&nbsp;| Apenas letras minúsculas e sem acento.</p>
+				</div>
+				<div id="botoes-esquerda">
+					<button onclick="codificar" id="codifica" name="btn-codifica">codificar</button>
+					<button id="decodifica" name="btn-decodifica">decodificar</button>
+				</div>
+			</section>
+			<section id="direita">
+				<div id="tela1">
+					<img id="lupa" src="projeto/images/lupa.png" alt="desenho de um rapaz ajoelhado no chão, segurando uma lupa perto de seu olho, observando um diamante" width="80%"/>
+					<h3 id="aviso2">Nenhuma mensagem encontrada</h3>
+					<p id="aviso2">Digite o texto que deseja codificar/decodificar.</p>
+				</div>
+				<div id="tela2">
+					<textarea id="saida" name="saida-texto"></textarea>
+					<div id="botoneira-saida">
+						<p id="aviso3">Infelizmente, botão "colar" não funciona em alguns navegadores.</p>
+						<div id="botoes-direita">
+							<button id="copiar" name="btn-copiar">copiar</button>
+							<button id="colar" name="btn-colar">colar</button>
+							<button id="recarregar" name="btn-recarregar">recarregar</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer id="rodape">
+			<div class="icons">
+				<a href="https://github.com/NetoPaiva" target="_blank">
+					<img src="projeto/images/icon-github.svg" width="30px" alt="logo GitHub" class="icon">
+				</a>
+				<a href="https://www.linkedin.com/in/netopaiva/" target="_blank">
+					<img src="projeto/images/icon-linkedin.svg" width="30px" alt="logo LinkedIn" class="icon">
+				</a>
+				<a href="mailto:netopaiva@yahoo.com">
+					<img src="projeto/images/icon-mail.svg" width="30px" alt="ícone email"class="icon">
+				</a>
+			</div>
+			<div class="autoria">
+				<p>&#169;  desenvolvido por <a target="_blank" href="mailto:netopaiva@yahoo.com">
+					NetoPaiva</a> &lt;janeiro.23&gt;</p>
+				<p>| Progrma ONE - Oracle Next Education -
+					<a href="https://www.alura.com.br/challenges/challenge-one-logica/sprint01-construa-decodificador-texto-com-javascript" target="-blank">
+						<img src="projeto/images/logo_oracle-alura_menor.png" alt="logo da Oracle, o sinal de mais e logo da Alura" height="15px"> |
+					</a>
+				</p>
+			</div>
+		</footer>
+	</div>
+</body>
+<script src="projeto/netopaiva_script.js"></script>
+</html>
+
+
+<!--	--- .fim ;)  -->
