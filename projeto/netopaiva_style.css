@@ -2,195 +2,175 @@
 
 /* paleta de cores */
 :root{
-	--fundo:#e5e5e5;
-	--azulClaro:#D8DFE8;
-	--azulEscuro:#0A3871;
-	--cinzaClaro:#989EA4;
-	--cinzaMedio:#6B7279;
-	--branco:#ffffff;
-	--degrade1: linear-gradient(0deg, #d8dfe8, #e5e5e5);
-	--degrade2: linear-gradient(0deg, #e5e5e5, #d8dfe8);
-	}
-
-/* Alterar configurações padrões do navegador */
-*{
-	margin: 0;
-	padding: 0;
-	font-weight: normal;
-	max-width: 100%;
-	background-color: transparent;
-	font-family: 'inter', sans-serif;
-	font-size: 1em;
-	line-height: 45px;
-	color: var(--azulEscuro);
+  --fundo:#e5e5e5;
+  --azulClaro:#D8DFE8;
+  --azulEscuro:#0A3871;
+  --cinzaClaro:#989EA4;
+  --cinzaMedio:#6B7279;
+  --branco:#ffffff;
+  --degrade1: linear-gradient(0deg, #d8dfe8, #e5e5e5);
+  --degrade2: linear-gradient(0deg, #e5e5e5, #d8dfe8);
 }
 
-/*	Configurações básicas do corpo da página */
-body{
-	background: var(--fundo);
+/* Reconfigurar navegador */
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  max-width: 100%;
+  background-color: transparent;
+  font-family: 'inter', sans-serif;
+  font-size: 1em;
+  line-height: 45px;
+  color: var(--azulEscuro);
 }
 
-/*	Área do cabeçalho */
-header{
-	display: flex;
-	justify-content: center;
-	padding: 2%;
-	background: var(--degrade1);
+/* Configurar cada elemento HTML */
+
+body {
+  background: var(--fundo);
 }
 
-/*	O texto do cabeçalho */
-h1{
-	color: var(--cinzaClaro);
-	font-size: 3.5rem;
-	font-weight: bold;
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  background: var(--degrade1);
 }
 
-/*	A área prinicpal */
+h1 {
+  color: var(--cinzaClaro);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
 main{
-	display: flex;
-	justify-content: center;
-	margin-bottom: 4%;
-	padding: 2%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+  padding: 2%;
 }
 
-/*	Texto do parágrafo */
 p{
-	font-size: 0.8em;
-	text-align: center;
-	line-height: 2;
-	color: var(--cinzaMedio);
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 2;
+  color: var(--cinzaMedio);
 }
 
-/*	Aparência do texto com link */
 a {
-	text-decoration: none;
-	font-size:0.8em;
-	color:inherit;
-	line-height: 2;
-	font-weight: bold;
+  text-decoration: none;
+  font-size:0.8em;
+  color:inherit;
+  line-height: 2;
+  font-weight: bold;
 }
 
-/*	Divisão esquerda */
 #esquerda{
-	padding-right: 2em;
+  padding-right: 2em;
 }
 
-/*	Áreas de texto - entrada e saída */
 textarea{
-	border: none;
-	color: var(--azulEscuro);
-	margin-top: 1%;
-	margin-left: 1%;
-	padding: 3%;
-	text-transform: lowercase;
-	overflow: auto;
-	width:90%;
+  border: none;
+  color: var(--azulEscuro);
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 3%;
+  text-transform: lowercase;
+  overflow: auto;
+  width:90%;
 }
 
-/*	Texto indicativo da área de texto */
 ::placeholder {
-	color: var(--cinzaClaro);
-	font-size: 1.3rem;
+  color: var(--cinzaClaro);
+  font-size: 1.3rem;
 }
 
-/*	Quando a área de texto está selecionada */
 textarea:focus {
-	outline: none;
+  outline: none;
 }
 
-/*	Espaço do aviso de caracteres inválidos */
 #aviso1{
-	display: flex;
-	align-items: center;
-	margin-left: 2%;
-	margin-top: 5.2%;
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  margin-top: 5.2%;
 }
 
-/*	Texto do aviso de caracteres inválidos */
 #aviso, span{
-	color: var(--cinzaMedio);
-	text-align: right;
+  color: var(--cinzaMedio);
+  text-align: right;
 }
 
-/*	Todos os botões da página */
 button{
-	border: 0.1em solid var(--cinzaClaro);
-	background: var(--azulClaro);
-	border-radius: 0.8em;
-	text-decoration: none;
-	color: var(--azulEscuro);
-	width: 45%;
-	margin: 2%;
-	margin-left:2%;
-	cursor: pointer;
+  border: 0.1em solid var(--cinzaClaro);
+  background: var(--azulClaro);
+  border-radius: 0.8em;
+  text-decoration: none;
+  color: var(--azulEscuro);
+  width: 45%;
+  margin: 2%;
+  margin-left:2%;
+  cursor: pointer;
 }
 
-/*	Animação de todos os botões ao passar o cursor */
 button:hover{
-	color: var(--branco);
-	background: var(--cinzaClaro);
-	transition: 0.5s all;
-}
+  color: var(--branco);
+  background: var(--cinzaClaro);
+  transition: 0.5s all;
+  }
 
-/*	Divisão direita */
 #direita{
-	align-items: center;
-	text-align: center;
+  align-items: center;
+  text-align: center;
 }
 
-/*	Divisão direita visível - Tela1*/
 #tela1{
-	margin-top:5%;
+  margin-top:5%;
 }
 
-/*	Texto abaixo da imagem */
 #tela1 p{
-	font-size: 0.8em;
-	text-align: center;
-	line-height: 1.4;
-	color: var(--cinzaMedio);
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.4;
+  color: var(--cinzaMedio);
 }
 
 #tela2{
-	display:none;
+  display:none;
 }
 
-/*	Área de saída do texto */
 #saida{
-	color: #0A3871;
-	text-align: left;
-	max-width:100%;
-	max-height:85%;
-	width: 20em;
-	height:13.4em;
+  color: #0A3871;
+  text-align: left;
+  max-width:100%;
+  max-height:85%;
+  width: 20em;
+  height:13.4em;
 }
 
-/*	Botões abaixo da saída do texto */
 #botoneira-saida{
-	max-width:100%;
-	align-items: center;
-	font-size:0.9em;
+  max-width:100%;
+  align-items: center;
+  font-size:0.9em;
 }
 
 #botoneira-saida button {
-	width:28%;
+  width:28%;
 }
 
-/*	Área do rodapé */
 #rodape{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1%;
-	justify-content: space-around;
-	background: var(--degrade2);
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  justify-content: space-around;
+  background: var(--degrade2);
 }
 
-/*	Ícones das redes sociais */
 .icon{
-	padding: 0 0.8em;
-	text-decoration: none;
+  padding: 0 0.8em;
+  text-decoration: none;
 }
 
 
