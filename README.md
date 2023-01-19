@@ -1,6 +1,11 @@
 # codDoc.text(t4_one);
 ## Projeto Codificador/Decodificador de texto
 
+- Link da publicação do projeto:
+    - [https://netopaiva.github.io/t4_one_challenge/](https://netopaiva.github.io/t4_one_challenge/)
+
+
+
 ### Challenge turma 4 - ONE (Oracle Next Education)
 
 - Oferecimento: **Oracle**
